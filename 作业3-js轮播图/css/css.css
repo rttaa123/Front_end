@@ -1,0 +1,475 @@
+/* ========== 全局重置 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面主体布局 */
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* ========== 动态背景层 ========== */
+/* 全屏背景，随导航切换而改变 */
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.4) blur(1px); /* 降低亮度并轻微模糊 */
+    transition: opacity 0.7s ease-in-out, background-image 0.3s ease-in-out;
+    z-index: -1;
+}
+
+/* ========== 主容器 ========== */
+/* 玻璃拟态效果的主容器，居中显示 */
+.main-container {
+    width: 95vw;
+    height: 90vh;
+    max-width: 2560px;
+    max-height: 1350px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========== Logo区域 ========== */
+.logo-container {
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    z-index: 10;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover {
+    transform: rotate(360deg); /* 悬停时旋转一圈 */
+}
+
+/* ========== 导航栏 ========== */
+.navbar {
+    height: 80px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 30px;
+    z-index: 5;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    width: 100px;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+/* 导航图标 */
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 5px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.nav-item:hover .nav-icon {
+    opacity: 1;
+}
+
+.nav-item.active .nav-icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35)); /* 激活时发光 */
+}
+
+.nav-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.nav-item.active {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 导航栏底部滑块指示器 */
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0; /* 由JS动态计算 */
+    background: #fff;
+    box-shadow: none;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    border-radius: 2px 2px 0 0;
+}
+
+.nav-indicator.active {
+    box-shadow: 0 -2px 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* 激活时发光 */
+}
+
+/* ========== 内容区域 ========== */
+.content-area {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 100px 40px 40px 40px; /* 顶部留出导航栏空间 */
+    overflow: hidden;
+}
+
+/* 左侧信息卡片 */
+.info-card {
+    flex: 1;
+    max-width: 350px;
+    background: rgba(133, 181, 244, 0.4);
+    border-radius: 15px;
+    padding: 30px;
+    color: #eeeeeee6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 50px;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-2px); /* 悬停时上浮 */
+    background: rgba(200, 192, 192, 0.5);
+}
+
+.info-card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    transition: opacity 0.3s ease;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-weight: 400;
+}
+
+.info-card .divider {
+    height: 2px;
+    width: 100%;
+    max-width: 100%;
+    background: #fff;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.info-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+    transition: opacity 0.3s ease;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* 文本悬停下划线效果 */
+.info-card p .char-span {
+    position: relative;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.info-card p .char-span.underlined::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: underlineAppear 0.3s ease;
+}
+
+@keyframes underlineAppear {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.info-card p .char-span.space-char {
+    display: inline; /* 空格字符保持行内显示 */
+}
+
+/* ========== 3D轮播图区域 ========== */
+.carousel-wrapper {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+/* 3D轮播容器，设置透视效果 */
+.carousel-container {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 900 / 480;
+    position: relative;
+    perspective: 1800px; /* 3D透视距离 */
+    perspective-origin: center center;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* 轮播轴，承载所有图片的3D旋转 */
+.carousel-axis {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* 保持3D空间 */
+    transform-origin: center center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 单个轮播项 */
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    transform-origin: center center;
+    -webkit-box-reflect: below 20px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4)); /* 倒影效果 */
+}
+
+/* 5张图片围绕Y轴均匀分布（每72度一张） */
+.carousel-item:nth-child(1) {
+    transform: rotateY(0deg) translateZ(350px);
+}
+
+.carousel-item:nth-child(2) {
+    transform: rotateY(72deg) translateZ(350px);
+}
+
+.carousel-item:nth-child(3) {
+    transform: rotateY(144deg) translateZ(350px);
+}
+
+.carousel-item:nth-child(4) {
+    transform: rotateY(216deg) translateZ(350px);
+}
+
+.carousel-item:nth-child(5) {
+    transform: rotateY(288deg) translateZ(350px);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 两侧图片变暗，突出中央图片 */
+.carousel-item.dimmed img {
+    filter: brightness(0.4);
+}
+
+/* 悬停时中央图片白色发光效果，同时暂停自动播放 */
+.carousel-container:hover .carousel-item:not(.dimmed) {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 
+                0 0 60px rgba(255, 255, 255, 0.6),
+                0 0 90px rgba(255, 255, 255, 0.4),
+                0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.8);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.carousel-container:hover .carousel-item:not(.dimmed) img {
+    filter: brightness(1.1); /* 悬停时略微提亮 */
+    transition: filter 0.3s ease;
+}
+
+/* 轮播控制按钮区域 */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 35px;
+}
+
+.carousel-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+
+.carousel-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.carousel-btn:hover {
+    transform: scale(1.15);
+}
+
+.carousel-btn:active {
+    transform: scale(0.9);
+}
+
+/* 轮播指示器 */
+.carousel-indicators {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.carousel-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.3);
+}
+
+/* ========== 音乐控制 ========== */
+.music-control {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+.music-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+.music-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* 音乐图标旋转动画 */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.music-btn.playing .music-icon {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+    animation: rotate 3s linear infinite; /* 播放时旋转 */
+}
+
+#background-music {
+    display: none;
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 1200px) {
+    .content-area {
+        padding: 20px;
+    }
+    .info-card {
+        margin-right: 20px;
+    }
+}
