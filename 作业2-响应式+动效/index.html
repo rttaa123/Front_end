@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<!-- 外部CSS样式表，实现div和flexbox布局 -->
+		<link rel="stylesheet" href="css/css.css" />
+		<script type="text/javascript" src="js/jquery-3.1.1.js" ></script>
+	</head>
+	<body>
+		<!-- 页面整体容器，使用div布局 -->
+		<div class="Warp">
+			<!-- 顶部区域：使用div布局，包含logo和导航 -->
+			<div class="header">
+				<!-- 顶部模块1：logo区域 -->
+				<div class="logo"><a href=""><img src="images/index_03.png"></a></div>
+				<!-- 顶部模块2：导航区域，使用flexbox布局 -->
+				<div class="nav">
+					<ul>
+						<li><a href="index.html#home" data-section="home">
+							<span class="icon-container">
+								<img class="icon-light" src="images/home.png" alt="HOME">
+								<img class="icon-dark" src="images/房子.png" alt="HOME">
+							</span>
+							<span>HOME</span>
+						</a></li>
+						<li><a href="index.html#about" data-section="about">
+							<span class="icon-container">
+								<img class="icon-light" src="images/了解1.png" alt="ABOUT ME">
+								<img class="icon-dark" src="images/了解.png" alt="ABOUT ME">
+							</span>
+							<span>ABOUT ME</span>
+						</a></li>
+						<li><a href="index.html#shop" data-section="shop">
+							<span class="icon-container">
+								<img class="icon-light" src="images/SHOP2.png" alt="SHOP MY INSTA">
+								<img class="icon-dark" src="images/SHOP.png" alt="SHOP MY INSTA">
+							</span>
+							<span>SHOP MY INSTA</span>
+						</a></li>
+						<li><a href="index.html#contact" data-section="contact">
+							<span class="icon-container">
+								<img class="icon-light" src="images/contact.png" alt="CONTACT">
+								<img class="icon-dark" src="images/联系_白色.png" alt="CONTACT">
+							</span>
+							<span>CONTACT</span>
+						</a></li>
+					</ul>
+					<dl>
+						<dd><a href=""><img src="images/index_06.png"></a></dd>
+						<dd><a href=""><img src="images/index_14.png"></a></dd>
+						<dd><a href=""><img src="images/index_08.png"></a></dd>
+						<dd><a href=""><img src="images/index_11.png"></a></dd>
+					</dl>
+				</div>
+			</div>
+			
+			<!-- 中部区域：包含6个主布局模块，全部使用div布局 -->
+			<div class="indexContainer">
+				<!-- 主布局模块1：横幅区域，使用div布局 -->
+				<div class="layer1">
+					<div class="pic carousel-container">
+						<div class="carousel-wrapper">
+							<div class="carousel-item active"><img src="images/banner.png"></div>
+							<div class="carousel-item"><img src="images/2.jpg"></div>
+							<div class="carousel-item"><img src="images/3.jpg"></div>
+							<div class="carousel-item"><img src="images/4.jpg"></div>
+							<div class="carousel-item"><img src="images/5.jpg"></div>
+							<div class="carousel-item"><img src="images/6.jpg"></div>
+							<div class="carousel-item"><img src="images/7.jpg"></div>
+							<div class="carousel-item"><img src="images/8.jpg"></div>
+						</div>
+						<!-- 左右箭头 -->
+						<div class="carousel-arrow carousel-prev">‹</div>
+						<div class="carousel-arrow carousel-next">›</div>
+						<!-- 指示器 -->
+						<div class="carousel-indicators"></div>
+					</div>
+					<div class="text">
+						<a href="">R E A D &nbsp; M O R E</a>
+						<img src="images/index_22.png">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam <br /> nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat <br /> volutpat.Ut wisi enim ad minim veniam, quis nostrud.</p>
+					</div>
+					<ul class="slide-hover-gallery">
+						<li>
+							<a href="">
+								<img src="images/index_26.png" class="base-img">
+								<!-- 悬停时显示的图片 (可替换) -->
+								<!-- <img src="images/index_41.png" class="hover-img"> -->
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/index_31.png" class="base-img">
+								<!-- 悬停时显示的图片 (可替换) -->
+								<!-- <img src="images/index_45.png" class="hover-img"> -->
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/index_28.png" class="base-img">
+								<!-- 悬停时显示的图片 (可替换) -->
+								<!-- <img src="images/index_49.png" class="hover-img"> -->
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<!-- 主布局模块2：订阅区域，使用div布局 -->
+				<div class="layer2">
+					<img src="images/tit2_07.png">
+					<p>SIGN UP TO RECIEVE THIS PRINTABLE FOR FREE!</p>
+					<ul>
+						<li><input type="text" placeholder="FULL NAME"/></li>
+						<li><input type="text" placeholder="EMALL ADDRESS"/></li>
+						<li><button>SUBSCRIBE</button></li>
+					</ul>
+				</div>
+				
+				<!-- 主布局模块3：内容区域1，使用div和flexbox混合布局 -->
+				<div class="layer3-1 layer3Box">
+					<div class="icon"><img src="images/a1.png"></div>
+					<div class="text">
+						<img src="images/index_37.png">
+						<div class="Nr">
+							<p class="hover-underline-text">Loremipsum dolor sit amet, consectetueradipiscing elit, sed diam nonummy nibh euismodtincidunt ut laoreet dolore magna aliquam eratvolutpat.Ut wisi enim ad minim veniam, quisnostrud exerci tation ullamcorper suscipit lobortis.</p>
+							<a href="">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 主布局模块4：内容区域2，使用div和flexbox混合布局 -->
+				<div class="layer3-2 layer3Box">
+					<div class="icon"><img src="images/a2.png"></div>
+					<div class="text">
+						<img src="images/index_37.png">
+						<div class="Nr">
+							<p class="hover-underline-text">Loremipsum dolor sit amet, consectetueradipiscing elit, sed diam nonummy nibh euismodtincidunt ut laoreet dolore magna aliquam eratvolutpat.Ut wisi enim ad minim veniam, quisnostrud exerci tation ullamcorper suscipit lobortis.</p>
+							<a href="">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 主布局模块5：内容区域3，使用div和flexbox混合布局 -->
+				<div class="layer3-3 layer3Box">
+					<div class="icon"><img src="images/a3.png"></div>
+					<div class="text">
+						<img src="images/index_37.png">
+						<div class="Nr">
+							<p class="hover-underline-text">Loremipsum dolor sit amet, consectetueradipiscing elit, sed diam nonummy nibh euismodtincidunt ut laoreet dolore magna aliquam eratvolutpat.Ut wisi enim ad minim veniam, quisnostrud exerci tation ullamcorper suscipit lobortis.</p>
+							<a href="">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 主布局模块6：图片展示区域，使用div布局 -->
+				<div class="layer4">
+					<div class="bt"><img src="images/tit2_11.png"></div>
+					<ul>
+						<li>
+							<img class="pic" src="images/a4.png">
+							<div class="more">
+								<img src="images/index_52.png">
+								<a href="">READ MORE</a>
+							</div>
+						</li>
+						<li>
+							<img class="pic" src="images/a5.png">
+							<div class="more">
+								<img src="images/index_52.png">
+								<a href="">READ MORE</a>
+							</div>	
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 底部区域：包含2个主布局模块，使用div布局 -->
+			<div class="footer">
+				<!-- 主布局模块7：底部标题区域 -->
+				<div class="bt"><img src="images/tit_15.png"></div>
+				<!-- 主布局模块8：底部订阅表单和社交链接，使用flexbox布局 -->
+				<ul>
+					<li><input type="text" placeholder="FULL NAME"/></li>
+					<li><input type="text" placeholder="EMALL ADDRESS"/></li>
+					<li><button>SUBSCRIBE</button></li>
+				</ul>
+				<dl>
+					<dd><a href=""><img src="images/index_60.png"></a></dd>
+					<dd><a href=""><img src="images/index_62.png"></a></dd>
+					<dd><a href=""><img src="images/index_57.png"></a></dd>
+					<dd><a href=""><img src="images/index_65.png"></a></dd>
+					<dd><a href=""><img src="images/index_67.png"></a></dd>
+				</dl>
+			</div>
+		</div>
+	</body>
+	<!-- 页面逻辑脚本 -->
+	<script src="js/main.js"></script>
+</html>

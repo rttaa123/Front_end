@@ -1,0 +1,939 @@
+@charset "utf-8";
+
+/* ========================================
+   1. 全局重置与基础样式
+   ======================================== */
+
+/* 元素重置：清除默认边距 */
+ul, li, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, ol, form, input {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 列表样式重置 */
+ul, li {
+    list-style: none;
+}
+
+/* 图片基础样式 */
+img {
+    border: 0px;
+}
+
+/* 链接基础样式 */
+a {
+    color: #5c5c5c;
+    text-decoration: none;
+}
+
+/* 表单元素基础样式 */
+input, textarea {
+    font-family: "PINGFANG_MEDIUM";
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* Body 基础样式 */
+body {
+    margin: 0px;
+    padding: 100px 0;
+    font-size: 12px;
+    font-family: 'tahoma2';
+    color: #898989;
+    line-height: 1;
+    background: #c3cbb3;
+}
+
+/* ========================================
+   2. 布局容器样式
+   ======================================== */
+
+/* 页面外层容器（整体包裹） */
+.Warp {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 中部内容容器 indexContainer */
+.indexContainer {
+    width: 100%;
+    background: #fff;
+    padding-bottom: 105px;
+}
+
+/* ========================================
+   3. 顶部区域样式 Header（logo + 导航）
+   ======================================== */
+
+.header {
+    width: 100%;
+    height: 375px;
+    background: #fff;
+    display: flex;
+}
+
+.header .logo {
+    width: 830px;
+    height: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px; /* Logo 3D 旋转视距 */
+}
+
+.header .logo a img {
+    display: block;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.8s ease;
+    /* animation: logoRotateOnLoad 0.8s ease forwards; 页面加载时自动旋转一圈 */
+}
+
+/* Logo 页面加载时旋转动画
+@keyframes logoRotateOnLoad {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+} */
+
+/* Logo 悬停效果：绕 Y 轴 3D 旋转一圈 */
+.header .logo:hover a img {
+    transform: rotateX(360deg);
+}
+
+.header .nav {
+    width: calc(100% - 830px);
+    padding-top: 100px;
+    padding-right: 170px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header .nav ul {
+    white-space: nowrap;
+    border-bottom: 2px solid #c9d1bb;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+    margin-bottom: 10px;
+}
+
+.header .nav ul li {
+    height: 90px;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+.header .nav ul li a {
+    color: #2B2B2D;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    padding: 0 25px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    gap: 10px;
+}
+
+/* 导航按钮图标容器 */
+.header .nav ul li a .icon-container {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* 导航按钮图标样式 */
+.header .nav ul li a img {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 浅色图标 - 默认显示 */
+.header .nav ul li a .icon-light {
+    opacity: 1;
+}
+
+/* 深色图标 - 默认隐藏 */
+.header .nav ul li a .icon-dark {
+    opacity: 0;
+}
+
+/* 悬停和激活时：隐藏浅色图标，显示深色图标 */
+.header .nav ul li a:hover .icon-light,
+.header .nav ul li a.active .icon-light {
+    opacity: 0;
+}
+
+.header .nav ul li a:hover .icon-dark,
+.header .nav ul li a.active .icon-dark {
+    opacity: 1;
+}
+
+/* 导航按钮背景从底部浮现效果 */
+.header .nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #7E856B;
+    transition: height 0.3s ease;
+    z-index: -1;
+}
+
+/* 导航按钮悬停效果 */
+.header .nav ul li a:hover {
+    color: #fff;
+}
+
+.header .nav ul li a:hover::before {
+    height: 100%;
+}
+
+/* 导航按钮激活状�? */
+.header .nav ul li a.active {
+    color: #fff;
+}
+
+.header .nav ul li a.active::before {
+    height: 100%;
+}
+
+/* 导航按钮点击状态，防止抖动 */
+.header .nav ul li a:active,
+.header .nav ul li a:focus {
+    outline: none;
+    border: none;
+}
+
+.header .nav dl {
+    height: 77px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+}
+
+.header .nav dl dd {
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header .nav dl dd:first-child {
+    margin-left: 0;
+}
+
+.header .nav dl dd a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+/* 社交图标悬停效果：放大 + 轻微旋转 */
+.header .nav dl dd a:hover {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+}
+
+/* ========================================
+   4. 轮播组件样式 Carousel（layer1 顶部大图）
+   ======================================== */
+
+.indexContainer .layer1 .pic {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.indexContainer .layer1 .pic img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 轮播图片特殊处理：等比例裁剪，居中铺满 */
+.indexContainer .layer1 .pic .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 等比例缩放并裁剪，填满容器 */
+    object-position: center;  /* 居中裁剪显示 */
+}
+
+/* 轮播容器：固定高度防止抖动 */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 600px; /* 默认最低高度，防止布局跳动 */
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* 轮播淡入淡出动画 */
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 绛夋瘮渚嬬缉鏀撅紝瑁佸壀涓棿閮ㄥ垎濉厖瀹瑰�? */
+    object-position: center; /* 灞呬腑瑁佸壀 */
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* 轮播左右箭头样式 */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+/* 轮播箭头悬停效果：放大 + 变亮 */
+.carousel-arrow:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+/* 轮播指示点容器 */
+.carousel-indicators {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel-indicators span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease; /* 指示点渐变 + 放大动画 */
+}
+
+.carousel-indicators span.active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.2); /* 当前页放大 */
+}
+
+/* ========================================
+   5. 中部内容区域样式（layer1 ~ layer4）
+   ======================================== */
+
+/* Layer1：banner + 标题 + READ MORE */
+.indexContainer .layer1 {
+    padding-bottom: 90px;
+}
+
+.indexContainer .layer1 .text {
+    background: url(../images/tit2_03.png);
+    width: 1080px;
+    max-width: 95%;
+    height: 430px;
+    margin: -215px auto 0 auto;
+    position: relative;
+    z-index: 2;
+    padding-top: 95px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexContainer .layer1 .text img {
+    display: block;
+    /* 显著上移一些，让图片明显偏上居中 */
+    margin: -120px auto 0 auto;
+    transition: all 0.3s ease;
+    order: 1;
+}
+
+.indexContainer .layer1 .text p {
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 770px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 26px;
+    color: #747474;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    order: 2;
+}
+
+.indexContainer .layer1 .text a {
+    order: 3;
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 280px;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    font-size: 18px;
+    color: #7E856B;
+    background: #edd1ac;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Layer1 按钮悬停和点击效果 */
+.indexContainer .layer1 .text a:hover,
+.indexContainer .layer1 .text a:focus {
+    background: #c3cbb3;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* 按钮悬停时：图片上移，文字显示 */
+.indexContainer .layer1 .text a:hover ~ img {
+    /* 上移幅度更大一些，让标题图片更靠近卡片顶部 */
+    margin-top: -150px;
+    margin-bottom: 35px;
+}
+
+.indexContainer .layer1 .text a:hover ~ p {
+    opacity: 1;
+    max-height: 200px;
+    /* 往上提一点，让文字更贴近图片 */
+    margin-top: -20px;
+}
+
+.indexContainer .layer1 ul {
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.indexContainer .layer1 ul li img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Layer1 底部图标悬停效果：放大 + 变亮 */
+.indexContainer .layer1 ul li {
+    /* 放慢底部三个图标的悬停切换速度 */
+    transition: all 1s ease;
+}
+
+.indexContainer .layer1 ul li:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+    transition: all 0.5s ease;
+}
+
+/* Layer2：订阅表单（中部 email 区块） */
+.indexContainer .layer2 {
+    width: 100%;
+    padding: 75px 0;
+    background: #edd1ac;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Layer2 整块悬停效果：橙色发光 */
+.indexContainer .layer2:hover {
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.6);
+}
+
+.indexContainer .layer2 img {
+    display: block;
+    margin: 0 auto;
+    transition: all 0.5s ease;
+}
+
+/* Layer2 图片悬停效果：悬浮 + 绿色发光 */
+.indexContainer .layer2 img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+    /* box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); */
+}
+
+.indexContainer .layer2 p {
+    height: 84px;
+    line-height: 84px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: #6a765c;
+    transition: text-shadow 0.3s ease;
+}
+
+/* Layer2 文字悬停效果：绿色发光 */
+.indexContainer .layer2 p:hover {
+    text-shadow: 0 0 15px rgba(76, 175, 80, 0.9);
+}
+
+.indexContainer .layer2 ul {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.indexContainer .layer2 ul li input {
+    font-size: 16px;
+    letter-spacing: 2px;
+    width: 295px;
+    height: 72px;
+    background: #fff;
+    padding: 0 30px;
+    box-sizing: border-box;
+    color: #B3B3B3;
+}
+
+.indexContainer .layer2 ul li input::placeholder {
+    color: #B3B3B3;
+}
+
+.indexContainer .layer2 ul li button {
+    border: none;
+    letter-spacing: 2px;
+    background: #c3cbb3 !important;
+    text-align: center;
+    line-height: 72px;
+    width: 295px;
+    height: 72px;
+    font-size: 16px;
+    color: #4f534b;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Layer2 按钮悬停效果：上移 + 投影 */
+.indexContainer .layer2 ul li button:hover {
+    background: #7e826b !important;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Layer2 输入框悬停/聚焦效果：淡绿色发光 */
+.indexContainer .layer2 ul li input {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.indexContainer .layer2 ul li input:hover,
+.indexContainer .layer2 ul li input:focus {
+    /* 淡绿色发光效果 */
+    box-shadow: 0 0 25px rgba(163, 214, 140, 0.7);
+    border-color: rgba(163, 214, 140, 0.9);
+}
+
+
+/* Layer3：三块图文内容模块（layer3-1/2/3） */
+.layer3-1, .layer3-2, .layer3-3 {
+    padding: 60px 0 0 0;
+}
+
+.layer3-3 {
+    padding-bottom: 135px;
+    margin-bottom: 0;
+}
+
+.layer3Box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.layer3Box .icon {
+    width: 860px;
+    height: 765px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.layer3Box .icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Layer3 图片悬停效果：放大 */
+.layer3Box .icon:hover img {
+    transform: scale(1.1);
+}
+
+.layer3Box .text {
+    width: 950px;
+    position: absolute;
+    right: 0;
+    background: #f2f0e3;
+    padding-bottom: 80px;
+}
+
+.layer3Box .text img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.layer3Box .text .Nr {
+    padding: 40px 0 0 160px;
+    box-sizing: border-box;
+}
+
+.layer3Box .text .Nr p {
+    font-size: 18px;
+    line-height: 32px;
+    color: #5d5a56;
+    width: 540px;
+    letter-spacing: 2px;
+}
+
+/* 悬停下划线效果样式 */
+.hover-underline-text {
+    position: relative;
+    cursor: default;
+    display: inline-block;
+    transition: text-decoration 0.2s ease;
+}
+
+/* 鼠标悬停时显示下划线 */
+.hover-underline-text:hover {
+    text-decoration: underline;
+    text-decoration-color: #5d5a56;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.layer3Box .text .Nr a {
+    margin-top: 40px;
+    display: block;
+    width: 295px;
+    height: 74px;
+    text-align: center;
+    line-height: 74px;
+    background: #c3cbb3;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Layer3 按钮悬停效果：右移 + 投影 */
+.layer3Box .text .Nr a:hover {
+    background: #7e826b;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Layer3 整体悬停效果：卡片背景变浅 */
+.layer3Box .text {
+    transition: background 0.3s ease;
+}
+
+.layer3Box:hover .text {
+    background: #ebe8d8;
+}
+
+/* Layer3-2 特殊布局（左右反转） */
+.layer3-2 .layer3Box {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.layer3-2 .text {
+    left: 0;
+    right: auto;
+}
+
+.layer3-2 .icon {
+    margin-left: auto;
+}
+
+/* Layer4：两张大图 + READ MORE 卡片 */
+.indexContainer .layer4 {
+    background: #7e826b;
+    width: 1380px;
+    margin: 0 auto;
+    padding-bottom: 135px;
+}
+
+.indexContainer .layer4 .bt {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexContainer .layer4 .bt img {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Layer4 图片悬停效果 - 只在图片上悬停时触发 */
+.indexContainer .layer4 .bt img:hover {
+    transform: scale(1.1);
+}
+
+.indexContainer .layer4 ul {
+    display: flex;
+    justify-content: center;
+    gap: 74px;
+}
+
+.indexContainer .layer4 ul li {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+.indexContainer .layer4 ul li img.pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+/* Layer4 图片悬停效果：放大 + 变亮 */
+.indexContainer .layer4 ul li:hover img.pic {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.indexContainer .layer4 ul li .more {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    height: 190px;
+    bottom: -54px;
+}
+
+.indexContainer .layer4 ul li .more img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.indexContainer .layer4 ul li .more a {
+    display: block;
+    width: 295px;
+    height: 72px;
+    text-align: center;
+    line-height: 72px;
+    font-size: 16px;
+    color: #fff;
+    background: #c3cbb3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Layer4 按钮悬停效果：上移 + 投影 */
+.indexContainer .layer4 ul li .more a:hover {
+    background: #9ba08a;
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   6. 底部区域样式 Footer
+   ======================================== */
+
+.footer {
+    width: 100%;
+    background: #edd1ac;
+    padding-bottom: 80px;
+}
+
+.footer .bt {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .bt img {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Footer 图片悬停效果 - 只在图片上悬停时触发 */
+.footer .bt img:hover {
+    transform: scale(1.1);
+    /* filter: brightness(1.1); */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.footer input {
+    font-size: 16px;
+    letter-spacing: 2px;
+    width: 295px;
+    height: 72px;
+    background: #fff;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.footer ul li input::placeholder {
+    color: #B3B3B3;
+    font-weight: bold;
+}
+
+.footer button {
+    border: none;
+    letter-spacing: 2px;
+    background: #c3cbb3 !important;
+    text-align: center;
+    line-height: 72px;
+    width: 295px;
+    height: 72px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Footer 按钮悬停效果：上移 + 投影 */
+.footer button:hover {
+    background: #7e826b !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer 输入框悬停/聚焦效果：淡绿色发光 */
+.footer input {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.footer input:hover,
+.footer input:focus {
+    /* 同样使用淡绿色发光效果，和上方输入框风格统一 */
+    box-shadow: 0 0 25px rgba(163, 214, 140, 0.7);
+    border-color: rgba(163, 214, 140, 0.9);
+}
+
+/* Footer 社交图标悬停效果：放大 + 旋转 */
+.footer dl dd a {
+    transition: all 0.3s ease;
+}
+
+.footer dl dd a:hover {
+    transform: scale(1.15) rotate(5deg);
+    opacity: 0.8;
+}
+
+.footer dl {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    gap: 70px;
+}
+
+/* 轮播图悬停效果：当前图片轻微放大 */
+.carousel-container:hover .carousel-item.active img {
+    transform: scale(1.02);
+}
+
+/* ========================================
+   7. 响应式样式（小屏适配）
+   ======================================== */
+
+@media (max-width: 1367px) {
+    body {
+        padding: 0;
+    }
+    .Warp {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+}
+
