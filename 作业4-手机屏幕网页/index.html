@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 字符编码设置 -->
+    <meta charset="UTF-8">
+    <!-- 响应式视口设置，适配移动端 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兰州大学学生活动</title>
+    <!-- Font Awesome图标库样式文件（本地化部署） -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- 主样式文件 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 开屏动画层：页面加载时显示，3秒后自动隐藏或可手动跳过 -->
+    <div class="splash-screen" id="splashScreen">
+        <!-- 开屏背景图片容器 -->
+        <div class="splash-image"></div>
+        <!-- 倒计时和跳过按钮容器 -->
+        <div class="splash-countdown">
+            <!-- 倒计时数字显示，初始值为3 -->
+            <span class="countdown-num" id="countdownNum">3</span>
+            <!-- 跳过按钮，点击可提前关闭开屏动画 -->
+            <span class="skip-btn" id="skipBtn">跳过</span>
+        </div>
+    </div>
+    
+    <!-- 顶部导航栏：固定定位，始终显示在页面顶部 -->
+    <header class="header">
+        <!-- Logo和标题容器 -->
+        <div class="logo-container">
+            <!-- 兰大Logo图片容器 -->
+            <div class="logo"></div>
+            <!-- 平台名称文字 -->
+            <div class="logo-text">兰大学生活动平台</div>
+        </div>
+        
+        <!-- 导航菜单：桌面端显示，移动端隐藏 -->
+        <div class="nav-menu">
+            <div class="nav-item active">首页</div>
+            <div class="nav-item">活动</div>
+            <div class="nav-item">社团</div>
+            <div class="nav-item">通知</div>
+            <div class="nav-item">我的</div>
+        </div>
+        
+        <!-- 右侧功能区域：搜索按钮和用户头像 -->
+        <div class="right-actions">
+            <!-- 搜索图标按钮 -->
+            <div class="search-btn">
+                <img src="images/搜索.png" alt="搜索">
+            </div>
+            <!-- 用户头像：显示用户名称首字 -->
+            <div class="user-profile">饶</div>
+        </div>
+    </header>
+    
+    <!-- 主内容区域：包含所有页面主要内容 -->
+    <main class="main-content">
+        <!-- 首页大标题区域（Hero Section）：渐变背景+浮动文字效果 -->
+        <section class="hero-section">
+            <!-- 浮动文字元素容器：展示兰大校训和特色文字，持续上下浮动动画 -->
+            <div class="floating-elements">
+                <div class="floating-element" style="top: 20%; left: 20%;">兰</div>
+                <div class="floating-element" style="top: 15%; right: 15%;">大</div>
+                <div class="floating-element" style="bottom: 25%; left: 14%;">自强不息</div>
+                <div class="floating-element" style="bottom: 15%; right: 10%;">独树一帜</div>
+                <div class="floating-element" style="top: 7%; left: 5%;">萃英山下好读书</div>
+                <div class="floating-element" style="bottom: 10%; left: 5%;">百年兰大</div>
+            </div>
+            
+            <!-- 主标题 -->
+            <h1 class="hero-title">兰州大学学生活动平台</h1>
+            <!-- 副标题：平台功能简介 -->
+            <p class="hero-subtitle">汇聚精彩活动，丰富校园生活。学术讲座、文艺演出、体育竞赛、社团活动，尽在掌握。</p>
+        </section>
+        
+        <!-- 近期热门活动区块：展示4个活动卡片 -->
+        <section class="recent-activities">
+            <h2 class="section-title">近期热门活动</h2>
+            
+            <!-- 活动卡片网格容器：响应式布局，桌面端多列，移动端单列 -->
+            <div class="activities-grid">
+                <!-- 活动卡片1：学术讲座 -->
+                <div class="activity-card">
+                    <!-- 活动图片容器：使用背景图片 -->
+                    <div class="activity-image" style="background-image: url('./images/报告厅.jpg');">
+                        <!-- 活动类型标签：右上角显示 -->
+                        <span class="activity-tag">学术讲座</span>
+                    </div>
+                    <!-- 活动内容区域 -->
+                    <div class="activity-content">
+                        <!-- 活动标题 -->
+                        <h3 class="activity-title">"黄河文明与生态保护"学术报告会</h3>
+                        <!-- 活动信息：时间和地点，使用Font Awesome图标 -->
+                        <div class="activity-info">
+                            <div><i class="far fa-calendar"></i> 10月25日 14:30</div>
+                            <div><i class="fas fa-map-marker-alt"></i> 观云楼 201</div>
+                        </div>
+                        <!-- 活动描述 -->
+                        <p class="activity-desc">邀请国内知名环境学者，探讨黄河流域生态保护与可持续发展战略。</p>
+                        <!-- 操作按钮：pulse类添加脉冲动画效果 -->
+                        <a href="#" class="activity-button pulse">立即报名</a>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image" style="background-image: url('./images/音乐会.jpg');">
+                        <span class="activity-tag">文艺演出</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">兰州大学第35届"昆仑之声"音乐会</h3>
+                        <div class="activity-info">
+                            <div><i class="far fa-calendar"></i> 10月28日 19:00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> 闻欣堂</div>
+                        </div>
+                        <p class="activity-desc">校艺术团倾情演出，古典与现代交融，展现兰大学子艺术风采。</p>
+                        <a href="#" class="activity-button pulse">查看详情</a>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image" style="background-image: url('./images/篮球1.jpg');">
+                        <span class="activity-tag">体育竞赛</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">"团结杯"校园篮球联赛总决赛</h3>
+                        <div class="activity-info">
+                            <div><i class="far fa-calendar"></i> 11月2日 16:00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> 体育馆主馆</div>
+                        </div>
+                        <p class="activity-desc">化学化工学院 vs 物理科学与技术学院，巅峰对决，等你见证！</p>
+                        <a href="#" class="activity-button pulse">预约观赛</a>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image" style="background-image: url('./images/国际文化节.jpg');">
+                        <span class="activity-tag">校级活动</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">“丝路欢歌，美在兰大”2025年国际文化节</h3>
+                        <div class="activity-info">
+                            <div><i class="far fa-calendar"></i> 11月5日 15:00</div>
+                            <div><i class="fas fa-map-marker-alt"></i> 昆仑堂 前广场</div>
+                        </div>
+                        <p class="activity-desc">我们把世界打包带来：多国美食、多彩歌舞...统统送到昆仑堂前！</p>
+                        <a href="#" class="activity-button pulse">加入活动</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 学校特色介绍区块：展示兰大的三个核心特色 -->
+        <section class="lzu-features-section">
+            <h2 class="section-title">兰大特色</h2>
+            
+            <!-- 特色卡片容器：横向排列，移动端纵向排列 -->
+            <div class="lzu-features">
+                <!-- 特色卡片1：百年兰大 -->
+                <div class="feature-card">
+                    <!-- 特色图标：悬浮时旋转360度并变色 -->
+                    <div class="feature-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="feature-title">百年兰大</h3>
+                    <p class="feature-desc">始建于1909年，教育部直属全国重点综合性大学，国家"985工程"和"211工程"重点建设高校。</p>
+                </div>
+                
+                <!-- 特色卡片2：自强不息 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="feature-title">自强不息</h3>
+                    <p class="feature-desc">校训精神，在西部坚守奋斗，在艰苦条件下创造一流业绩，形成独特办学风格。</p>
+                </div>
+                
+                <!-- 特色卡片3：独树一帜 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="feature-title">独树一帜</h3>
+                    <p class="feature-desc">在草业科学、生态学、化学、大气科学等领域形成鲜明特色和优势学科。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 校园建筑展示区块：横向滚动展示7个标志性建筑 -->
+        <section class="campus-buildings">
+            <h2 class="section-title">校园标志建筑</h2>
+            
+            <!-- 建筑卡片滑动容器：支持鼠标拖拽和触摸滑动 -->
+            <div class="building-slider">
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/昆仑堂.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">昆仑堂</h3>
+                        <p class="building-desc">兰州大学榆中校区图书馆，藏书丰富，是兰大学子求知探索的核心场所。</p>
+                    </div>
+                </div>
+                
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/积石堂.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">积石堂</h3>
+                        <p class="building-desc">兰州大学城关校区图书馆，藏书丰富，环境舒适。</p>
+                    </div>
+                </div>
+                
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/校史馆.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">校史馆</h3>
+                        <p class="building-desc">兰州大学校史馆，承载着兰州大学的百年历史记忆。</p>
+                    </div>
+                </div>
+                
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/闻欣堂.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">闻欣堂</h3>
+                        <p class="building-desc">学校主要的文化活动场所，举办各类学术报告、文艺演出和重要会议。</p>
+                    </div>
+                </div>
+
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/博物馆.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">博物馆</h3>
+                        <p class="building-desc">兰州大学博物馆，融合校史、自然科学与文物收藏，展现学术底蕴与丝路文化。</p>
+                    </div>
+                </div>
+
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/校训石.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">校训石</h3>
+                        <p class="building-desc">兰州大学校训石镌刻"自强不息，独树一帜"，矗立校园中央，时刻砥砺学子奋进精神。</p>
+                    </div>
+                </div>
+
+                <div class="building-card">
+                    <div class="building-image" style="background-image: url('./images/校门.jpg');"></div>
+                    <div class="building-info">
+                        <h3 class="building-name">兰州大学大门</h3>
+                        <p class="building-desc">兰州大学正门庄重典雅，校徽高悬，迎八方学子，彰显百年学府风范。</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+    <!-- 底部菜单栏：固定定位，始终显示在页面底部 -->
+    <footer class="footer-menu">
+        <!-- 菜单项1：首页（默认激活状态） -->
+        <a href="#" class="menu-item active">
+            <i class="fas fa-home"></i>
+            <span>首页</span>
+        </a>
+        <!-- 菜单项2：活动 -->
+        <a href="#" class="menu-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>活动</span>
+        </a>
+        <!-- 菜单项3：社团 -->
+        <a href="#" class="menu-item">
+            <i class="fas fa-users"></i>
+            <span>社团</span>
+        </a>
+        <!-- 菜单项4：通知 -->
+        <a href="#" class="menu-item">
+            <i class="fas fa-bell"></i>
+            <span>通知</span>
+        </a>
+        <!-- 菜单项5：我的 -->
+        <a href="#" class="menu-item">
+            <i class="fas fa-user"></i>
+            <span>我的</span>
+        </a>
+    </footer>
+    
+    <!-- JavaScript功能脚本：包含所有交互功能 -->
+    <script src="js/js.js"></script>
+</body>
+</html>
