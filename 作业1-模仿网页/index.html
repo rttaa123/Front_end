@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 外部CSS样式表，实现div和flexbox布局 -->
+		<link rel="stylesheet" href="css/css.css" />
+	</head>
+	<body>
+		<!-- 页面整体容器，使用div布局 -->
+		<div class="Warp">
+			<!-- 顶部区域：使用div布局，包含logo和导航 -->
+			<div class="header">
+				<!-- 顶部模块1：logo区域 -->
+				<div class="logo"><a href=""><img src="images/index_03.png"></a></div>
+				<!-- 顶部模块2：导航区域，使用flexbox布局 -->
+				<div class="nav">
+					<ul>
+						<li><a href="">HOME</a></li>
+						<li><a href="">ABOUT ME</a></li>
+						<li><a href="">SHOP MY INSTA</a></li>
+						<li><a href="">CONTACT</a></li>
+					</ul>
+					<dl>
+						<dd><a href=""><img src="images/index_06.png"></a></dd>
+						<dd><a href=""><img src="images/index_14.png"></a></dd>
+						<dd><a href=""><img src="images/index_08.png"></a></dd>
+						<dd><a href=""><img src="images/index_11.png"></a></dd>
+					</dl>
+				</div>
+			</div>
+			
+			<!-- 中部区域：包含6个主布局模块，全部使用div布局 -->
+			<div class="indexContainer">
+				<!-- 主布局模块1：横幅区域，使用div布局 -->
+				<div class="layer1">
+					<div class="pic"><img src="images/banner.png"></div>
+					<div class="text">
+						<img src="images/index_22.png">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam <br /> nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat <br /> volutpat.Ut wisi enim ad minim veniam, quis nostrud.</p>
+						<a href="">R E A D &nbsp; M O R E</a>
+					</div>
+					<ul>
+						<li><a href=""><img src="images/index_26.png"></a></li>
+						<li><a href=""><img src="images/index_31.png"></a></li>
+						<li><a href=""><img src="images/index_28.png"></a></li>
+					</ul>
+				</div>
+				
+				<!-- 主布局模块2：订阅区域，使用div布局 -->
+				<div class="layer2">
+					<img src="images/tit2_07.png">
+					<p>SIGN UP TO RECIEVE THIS PRINTABLE FOR FREE!</p>
+					<ul>
+						<li><input type="text" placeholder="FULL NAME"/></li>
+						<li><input type="text" placeholder="EMALL ADDRESS"/></li>
+						<li><button>SUBSCRIBE</button></li>
+					</ul>
+				</div>
+				
+				<!-- 主布局模块3：内容区域1，使用div和flexbox混合布局 -->
+				<div class="layer3-1 layer3Box">
+					<div class="icon"><img src="images/a1.png"></div>
+					<div class="text">
+						<img src="images/index_37.png">
+						<div class="Nr">
+							<p>Loremipsum dolor sit amet, consectetueradipiscing elit, sed diam nonummy nibh euismodtincidunt ut laoreet dolore magna aliquam eratvolutpat.Ut wisi enim ad minim veniam, quisnostrud exerci tation ullamcorper suscipit lobortis.</p>
+							<a href="">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 主布局模块4：内容区域2，使用div和flexbox混合布局 -->
+				<div class="layer3-2 layer3Box">
+					<div class="icon"><img src="images/a2.png"></div>
+					<div class="text">
+						<img src="images/index_37.png">
+						<div class="Nr">
+							<p>Loremipsum dolor sit amet, consectetueradipiscing elit, sed diam nonummy nibh euismodtincidunt ut laoreet dolore magna aliquam eratvolutpat.Ut wisi enim ad minim veniam, quisnostrud exerci tation ullamcorper suscipit lobortis.</p>
+							<a href="">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 主布局模块5：内容区域3，使用div和flexbox混合布局 -->
+				<div class="layer3-3 layer3Box">
+					<div class="icon"><img src="images/a3.png"></div>
+					<div class="text">
+						<img src="images/index_37.png">
+						<div class="Nr">
+							<p>Loremipsum dolor sit amet, consectetueradipiscing elit, sed diam nonummy nibh euismodtincidunt ut laoreet dolore magna aliquam eratvolutpat.Ut wisi enim ad minim veniam, quisnostrud exerci tation ullamcorper suscipit lobortis.</p>
+							<a href="">READ MORE</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 主布局模块6：图片展示区域，使用div布局 -->
+				<div class="layer4">
+					<div class="bt"><img src="images/tit2_11.png"></div>
+					<ul>
+						<li><img class="pic" src="images/a4.png"><a href=""><img class="more" src="images/index_52.png"></a></li>
+						<li><img class="pic" src="images/a5.png"><a href=""><img class="more" src="images/index_52.png"></a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 底部区域：包含2个主布局模块，使用div布局 -->
+			<div class="footer">
+				<!-- 主布局模块7：底部标题区域 -->
+				<div class="bt"><img src="images/tit_15.png"></div>
+				<!-- 主布局模块8：底部订阅表单和社交链接，使用flexbox布局 -->
+				<ul>
+					<li><input type="text" placeholder="FULL NAME"/></li>
+					<li><input type="text" placeholder="EMALL ADDRESS"/></li>
+					<li><button>SUBSCRIBE</button></li>
+				</ul>
+				<dl>
+					<dd><a href=""><img src="images/index_60.png"></a></dd>
+					<dd><a href=""><img src="images/index_62.png"></a></dd>
+					<dd><a href=""><img src="images/index_57.png"></a></dd>
+					<dd><a href=""><img src="images/index_65.png"></a></dd>
+					<dd><a href=""><img src="images/index_67.png"></a></dd>
+				</dl>
+			</div>
+		</div>
+	</body>
+</html>

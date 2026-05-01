@@ -1,0 +1,445 @@
+@charset "utf-8";
+
+/* 全局重置和基础样式 */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: 'tahoma2';
+    color: #898989;
+    line-height: 1;
+    background: #FFF;
+}
+
+/* 元素重置 - 清除默认边距 */
+ul, li, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, ol, form, input {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 表单元素样式 */
+input, textarea {
+    font-family: "PINGFANG_MEDIUM";
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* 列表样式重置 */
+ul, li {
+    list-style: none;
+}
+
+/* 图片样式 */
+img {
+    border: 0px;
+    padding: 0px;
+}
+
+/* 链接样式 */
+a {
+    color: #5c5c5c;
+    text-decoration: none;
+}
+
+/* 页面外层容器 */
+.Warp {
+    width: 100%;
+    padding: 100px;
+    box-sizing: border-box;
+    background: #c3cbb3;
+}
+
+/* 顶部区域样式 */
+.header {
+    width: 100%;
+    height: 375px;
+    background: #fff;
+    display: flex;
+}
+
+.header .logo {
+    width: 830px;
+    height: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .nav {
+    width: calc(100% - 830px);
+    padding-top: 100px;
+    padding-right: 170px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header .nav ul {
+    width: 100%;
+    white-space: nowrap;
+    border-bottom: 2px solid #c9d1bb;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0; /* 确保没有内边距影响对齐 */
+    margin-bottom: 10px; /* 添加一些间距 */
+}
+
+.header .nav ul li {
+    font-size: 20px;
+    color: #08080a;
+    height: 90px;
+    line-height: 90px;
+    text-align: right;
+    width: 160px; /* 稍微增加宽度以适应更长的文本 */
+    margin-right: 80px; /* 减少边距以适应更宽的li */
+}
+
+.header .nav ul li:last-child {
+    margin-right: 0;
+}
+
+.header .nav ul li a {
+    color: #2B2B2D;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    padding-right: 10px; /* 添加一些内边距使文字不贴边 */
+}
+
+.header .nav dl {
+    height: 77px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center; /* 确保整个dl垂直居中 */
+}
+
+.header .nav dl dd {
+    /* 移除line-height，使用flex实现居中 */
+    margin-left: 60px;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    height: 100%; /* 确保dd高度与dl一致 */
+}
+
+.header .nav dl dd:first-child {
+    margin-left: 0;
+}
+
+.header .nav dl dd a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* 中部主容器 */
+.indexContainer {
+    width: 100%;
+    background: #fff;
+    padding-bottom: 105px;
+}
+
+.indexContainer .layer1 {
+    padding-bottom: 90px;
+}
+
+.indexContainer .layer1 .pic {
+    width: 100%;
+}
+
+.indexContainer .layer1 .pic img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.indexContainer .layer1 .text {
+    background: url(../images/tit2_03.png);
+    width: 1080px;
+    height: 430px;
+    margin: -215px auto 0 auto;
+    position: relative;
+    z-index: 2;
+    padding-top: 95px;
+    box-sizing: border-box;
+}
+
+.indexContainer .layer1 .text img {
+    display: block;
+    margin: 0 auto 35px auto;
+}
+
+.indexContainer .layer1 .text p {
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 770px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 26px;
+    color: #747474;
+}
+
+.indexContainer .layer1 .text a {
+    display: block;
+    margin: 45px auto 0 auto;
+    width: 280px;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    font-size: 18px;
+    color: #7E856B;
+    background: #edd1ac;
+	font-weight: bold;
+}
+
+.indexContainer .layer1 ul {
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* 第二层内容区域 */
+.indexContainer .layer2 {
+    width: 100%;
+    padding: 75px 0;
+    background: #edd1ac;
+}
+
+.indexContainer .layer2 img {
+    display: block;
+    margin: 0 auto;
+}
+
+.indexContainer .layer2 p {
+    height: 84px;
+    line-height: 84px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: #6a765c;
+}
+
+.indexContainer .layer2 ul {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.indexContainer .layer2 ul li input {
+    font-size: 16px;
+    letter-spacing: 2px;
+    width: 295px;
+    height: 72px;
+    background: #fff;
+    padding: 0 30px;
+    box-sizing: border-box;
+	color: #B3B3B3;
+}
+
+.indexContainer .layer2 ul li input::placeholder {
+    color: #B3B3B3; /* 设置占位符文本颜色 */
+}
+
+.indexContainer .layer2 ul li button {
+    border: none;
+    letter-spacing: 2px;
+    background: #c3cbb3!important;
+    text-align: center;
+    line-height: 72px;
+    width: 295px;
+    height: 72px;
+    text-align: center;
+    font-size: 16px;
+    color: #4f534b;
+}
+
+.layer3-1, .layer3-2, .layer3-3 {
+    padding: 60px 0 0 0;
+}
+
+.layer3-3 {
+    padding-bottom: 135px;
+}
+
+.layer3Box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.layer3Box .icon {
+    width: 860px;
+    height: 765px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.layer3Box .icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.layer3Box .text {
+    width: 950px;
+    position: absolute;
+    right: 0;
+    background: #f2f0e3;
+    padding-bottom: 80px;
+}
+
+.layer3Box .text img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.layer3Box .text .Nr {
+    padding: 40px 0 0 160px;
+    box-sizing: border-box;
+}
+
+.layer3Box .text .Nr p {
+    font-size: 18px;
+    line-height: 32px;
+    color: #5d5a56;
+    width: 540px;
+    letter-spacing: 2px;
+}
+
+.layer3Box .text .Nr a {
+    margin-top: 40px;
+    display: block;
+    width: 295px;
+    height: 74px;
+    text-align: center;
+    line-height: 74px;
+    background: #c3cbb3;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* 第三层第二部分的特殊样式 */
+.layer3-2 .layer3Box {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.layer3-2 .text {
+    left: 0;
+    right: auto;
+}
+
+.layer3-2 .icon {
+    margin-left: auto;
+}
+
+.layer3-3 {
+    margin-bottom: 0;
+}
+
+.indexContainer .layer4 {
+    background: #7e826b;
+    width: 1380px;
+    margin: 0 auto;
+    padding-bottom: 135px;
+}
+
+.indexContainer .layer4 .bt {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexContainer .layer4 ul {
+    display: flex;
+    justify-content: center;
+    gap: 74px;
+}
+
+.indexContainer .layer4 ul li {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+.indexContainer .layer4 ul li img.pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.indexContainer .layer4 ul li img.more {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -54px;
+}
+
+/* 底部区域样式 */
+.footer {
+    width: 100%;
+    background: #edd1ac;
+    padding-bottom: 80px;
+}
+
+.footer .bt {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.footer input {
+    font-size: 16px;
+    letter-spacing: 2px;
+    width: 295px;
+    height: 72px;
+    background: #fff;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.footer button {
+    border: none;
+    letter-spacing: 2px;
+    background: #c3cbb3!important;
+    text-align: center;
+    line-height: 72px;
+    width: 295px;
+    height: 72px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+	font-weight: bold;
+}
+
+.footer dl {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    gap: 70px;
+}
+
+.footer ul li input::placeholder {
+    color: #B3B3B3; /* 设置占位符文本颜色 */
+	font-weight: bold;
+}
