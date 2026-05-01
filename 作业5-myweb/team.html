@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<!-- 管理及人才团队页 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<!-- <script type="text/javascript" src="js/wow.min.js" ></script>	 -->
+		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/layer1-slider.js" ></script>
+		<title>管理团队 - 智汇AI平台</title>
+		<script>
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			window.onresize = function() {
+			    document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			}				
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<!-- 网站头部 -->
+		<div class="header">
+			<!-- 顶部导航栏 -->
+			<div class="top">
+				<div class="topLeft">
+					<ul>
+						<li><a href="javascript:;" class="btn-wechat"><img src="images/wx.png">微信</a></li>
+						<li><a href="javascript:;" class="btn-weibo"><img src="images/wb.png">微博</a></li>
+						<li><a href="javascript:;" class="btn-mobile"><img src="images/phone.png">移动版</a></li>
+						<li><a href="javascript:;" class="btn-qa"><img src="images/robot.png">智能问答</a></li>
+					</ul>
+				</div>
+				<div class="topRight">
+					<!-- 登录注册 -->
+					<div class="Nr">
+                        <a href="login.html">登录</a>&nbsp;|&nbsp;<a href="register.html">注册</a>
+					</div>
+					<!-- 语言切换 -->
+					<div class="Nr">
+                        <a href="javascript:;" class="lang-btn on">繁</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">简</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">EN</a>
+					</div>
+				</div>
+			</div>
+			<!-- Logo和搜索框 -->
+			<div class="headerBox">
+				<div class="logo"><a href=""><img src="images/index_17.png"></a></div>
+				<div class="serach">
+					<input type="text" placeholder="搜索您想了解的资讯" />
+					<button onclick="window.location.href='news-list.html'">
+						<img src="images/search.png" alt="搜索图标" class="search-icon">
+						<span>搜索</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 主导航菜单 -->
+		<div class="nav">
+			<ul>
+				<li><a href="index.html"><img src="images/index_34.png">网站首页</a></li>
+				<li><a href="intro.html"><img src="images/index_46.png">关于我们</a></li>
+				<li class="has-dropdown">
+					<a href="news-list.html">
+						<img src="images/index_40.png">AI资讯
+						<span class="nav-arrow">▼</span>
+					</a>
+					<div class="dropdown-menu">
+						<a href="ai-culture.html">AI文化</a>
+						<a href="ai-application.html">AI应用</a>
+						<a href="ai-learning.html">AI学习</a>
+					</div>
+				</li>  
+				<li><a href="case-list.html"><img src="images/index_25.png">成果案例</a></li>
+				<li><a href="baoming.html"><img src="images/index_31.png">文章征集</a></li>
+				<li><a href="user-center.html"><img src="images/center.png">用户中心</a></li>
+			</ul>
+		</div>
+
+		<!-- 悬浮问卷按钮 -->
+		<div class="fixed-survey-btn">
+			<div class="icon-box">
+				<img src="images/icon_survey.png" alt="问卷">
+			</div>
+			<p>问卷调查</p>
+		</div>
+		<div class="pop-box" id="pop-survey-form">
+			<div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+			<div class="pop-content survey-content">
+				<h3>用户反馈调查</h3>
+				<p class="sub-title">您的建议是我们进步的动力</p>
+				
+				<form action="">
+					<div class="form-group">
+						<label>您对智汇AI平台的满意度：</label>
+						<div class="radio-group">
+							<label><input type="radio" name="satisfaction" value="very"> 非常满意</label>
+							<label><input type="radio" name="satisfaction" value="good"> 满意</label>
+							<label><input type="radio" name="satisfaction" value="normal"> 一般</label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>您的宝贵建议：</label>
+						<textarea placeholder="请输入您的建议或遇到的问题..."></textarea>
+					</div>
+		
+					<div class="form-group">
+						<label>联系方式 (选填)：</label>
+						<input type="text" placeholder="手机号或邮箱">
+					</div>
+		
+					<button type="button" class="submit-btn">提交反馈</button>
+				</form>
+				</div>
+		</div>
+		<div class="navGation">
+			<ul>
+				<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+				<li><a href="intro.html">关于我们</a>&nbsp;>&nbsp;</li>
+				<li><a href="team.html">管理团队</a></li>
+			</ul>
+		</div>
+		<div class="listContainer">
+			<div class="SideLeft">
+				<div class="bt">组织架构<img src="images/sideIcon_03.png"></div>
+				<ul>
+					<li><a href="intro.html">智汇AI简介 <span class="arrow"></span></a></li>
+					<li><a href="structure.html">组织架构 <span class="arrow"></span></a></li>
+					<li><a href="committee.html">学术委员会 <span class="arrow"></span></a></li>	
+					<li class="on"><a href="team.html">管理及人才团队 <span class="arrow"></span></a></li>
+					<li><a href="notice.html">智汇AI公告 <span class="arrow"></span></a></li>
+					<li><a href="contact.html">联系我们 <span class="arrow"></span></a></li>
+				</ul>
+			</div>
+			<div class="NrRight">
+				<div class="bt">
+					<ul>
+						<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+						<li><a href="intro.html">关于我们</a>&nbsp;>&nbsp;</li>
+						<li><a href="team.html">管理及人才团队</a></li>
+					</ul>
+				</div>
+				
+				<!-- 团队成员介绍区域 -->
+				<div class="team-container">
+					<h2 class="team-title">智汇AI核心管理团队</h2>
+					<p class="team-desc">我们的团队由人工智能领域的顶尖专家、资深技术工程师和行业领袖组成，致力于推动AI技术的创新与应用。</p>
+					
+					<div class="team-grid">
+						<!-- 团队成员卡片1 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team1.jpg" alt="张智明" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:zhangzhiming@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">张智明</h3>
+									<p class="team-position">首席技术官 / CTO</p>
+									<p class="team-bio">清华大学计算机科学博士，拥有15年人工智能研发经验，主导多项国家级AI科研项目，在深度学习和计算机视觉领域发表论文30余篇。</p>
+									<div class="team-tags">
+										<span class="team-tag">机器学习</span>
+										<span class="team-tag">计算机视觉</span>
+										<span class="team-tag">算法优化</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片2 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team2.jpg" alt="李思源" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:lisiyaun@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">李思源</h3>
+									<p class="team-position">首席科学家</p>
+									<p class="team-bio">北京大学人工智能研究所博士后，专注于自然语言处理与知识图谱研究，曾获国家科技进步二等奖，拥有20项AI技术专利。</p>
+									<div class="team-tags">
+										<span class="team-tag">自然语言处理</span>
+										<span class="team-tag">知识图谱</span>
+										<span class="team-tag">大语言模型</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片3 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team3.jpg" alt="王雪梅" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:wangxuemei@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">王雪梅</h3>
+									<p class="team-position">产品总监</p>
+									<p class="team-bio">斯坦福大学人机交互硕士，拥有10年AI产品管理经验，成功主导开发多款智能产品，擅长将前沿技术转化为用户友好的商业解决方案。</p>
+									<div class="team-tags">
+										<span class="team-tag">产品设计</span>
+										<span class="team-tag">用户体验</span>
+										<span class="team-tag">商业化</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片4 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team4.png" alt="赵建国" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:zhaojianguo@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">赵建国</h3>
+									<p class="team-position">技术副总裁</p>
+									<p class="team-bio">上海交通大学计算机科学硕士，专注于分布式计算与AI系统架构，拥有8年大规模AI系统设计与实施经验，管理百人技术团队。</p>
+									<div class="team-tags">
+										<span class="team-tag">系统架构</span>
+										<span class="team-tag">分布式计算</span>
+										<span class="team-tag">团队管理</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片5 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team1.jpg" alt="陈晓雯" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:chenxiaowen@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">陈晓雯</h3>
+									<p class="team-position">研发总监</p>
+									<p class="team-bio">浙江大学人工智能专业博士，专注于强化学习与智能决策系统，在顶级AI期刊发表论文20余篇，主导多项企业级AI解决方案研发。</p>
+									<div class="team-tags">
+										<span class="team-tag">强化学习</span>
+										<span class="team-tag">决策系统</span>
+										<span class="team-tag">算法研究</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片6 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team2.jpg" alt="刘宇航" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:liuyuhang@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">刘宇航</h3>
+									<p class="team-position">市场总监</p>
+									<p class="team-bio">复旦大学市场营销硕士，拥有12年科技行业市场经验，精通AI技术市场定位与品牌战略，成功推动多个AI产品市场推广。</p>
+									<div class="team-tags">
+										<span class="team-tag">市场营销</span>
+										<span class="team-tag">品牌战略</span>
+										<span class="team-tag">业务拓展</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片7 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team3.jpg" alt="孙浩然" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:sunhaoran@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">孙浩然</h3>
+									<p class="team-position">数据科学总监</p>
+									<p class="team-bio">南京大学数据科学博士，专注于大数据分析与AI模型优化，拥有10年数据分析经验，为多家大型企业提供数据智能解决方案。</p>
+									<div class="team-tags">
+										<span class="team-tag">数据分析</span>
+										<span class="team-tag">模型优化</span>
+										<span class="team-tag">大数据</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 团队成员卡片8 -->
+						<div class="team-card">
+							<div class="team-card-inner">
+								<div class="team-photo">
+									<img src="images/team/team4.png" alt="周婷婷" class="team-img">
+									<div class="team-overlay">
+										<a href="mailto:zhoutingting@zhihuiai.com" class="team-email">发送邮件</a>
+									</div>
+								</div>
+								<div class="team-info">
+									<h3 class="team-name">周婷婷</h3>
+									<p class="team-position">人力资源总监</p>
+									<p class="team-bio">武汉大学人力资源管理硕士，专注于科技行业人才战略与发展，拥有15年HR管理经验，搭建了智汇AI完整的人才培养体系。</p>
+									<div class="team-tags">
+										<span class="team-tag">人才战略</span>
+										<span class="team-tag">组织发展</span>
+										<span class="team-tag">人才培养</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 分页导航 -->
+					<dl class="pageMain">
+						<dd><a href=""><img src="images/btn_03.png"></a></dd>
+						<dd class="on"><a href="">1</a></dd>
+						<dd><a href="">2</a></dd>
+						<dd>···</dd>
+						<dd><a href="">5</a></dd>
+						<dd><a href=""><img src="images/btn_05.png"></a></dd>
+					</dl>
+				</div>
+				
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="footer">
+			<div class="footerBox">
+				<div class="Link">
+					<div class="bt"><img src="images/footer_10.png">友情链接</div>
+					<ul>
+						<li><a href="">中国人工智能学会</a></li>
+						<li><a href="">人工智能产业发展联盟</a></li>
+						<li><a href="">AI技术交流平台</a></li>
+						<li><a href="">智能科技文化传播中心</a></li>
+					</ul>
+					<a class="more" href=""></a>
+				</div>
+				<div class="Main">
+					<ul>
+						<h2>关于智汇AI</h2>
+						<li><a href="">发展历程</a></li>
+						<li><a href="">未来方向</a></li>
+					</ul>
+					<ul>
+						<h2>信息公开</h2>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">智汇AI公告</a></li>
+						<li><a href="">管理及人才团队</a></li>
+						<li><a href="">学术委员会</a></li>
+						<li><a href="">组织架构</a></li>
+						<li><a href="">智汇AI简介</a></li>
+					</ul>
+					<ul>
+						<h2>业务板块</h2>
+						<li><a href="">AI技术研发</a></li>
+						<li><a href="">专业咨询</a></li>
+						<li><a href="">AI会展服务</a></li>
+						<li><a href="">产业合作</a></li>
+						<li><a href="">企业孵化</a></li>
+						<li><a href="">技术转移</a></li>
+						<li><a href="">人才培养</a></li>
+						<li><a href="">AI科学研究</a></li>
+					</ul>
+					<ul>
+						<h2>新闻动态</h2>
+						<li><a href="">智汇AI动态</a></li>
+						<li><a href="">行业动态</a></li>
+						<li><a href="">国内外动态</a></li>
+					</ul>
+					<ul>
+						<h2>成果案例</h2>
+						<li><a href="">在研项目</a></li>
+						<li><a href="">科研领域</a></li>
+						<li><a href="">成果展示</a></li>
+					</ul>
+					<ul>
+						<h2>人才招聘</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<ul>
+						<h2>资料下载</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<div class="code">
+						<img src="images/footer_15.png">
+						<p>官方微信</p>
+					</div>
+					<div class="phone">
+						<a href="">在线留言</a>
+						<p>周一至周五 9：00-18：00</p>
+						<h2>027-87059116</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyRight">
+			Copyright © 2024 智汇AI 人工智能科技文化传播平台 All Rights Reserved. <img src="images/footer_18.png">鄂公网安备 42011502000906号
+		</div>
+
+        <div class="pop-mask"></div>
+        
+        <div class="pop-box" id="pop-wechat">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/wechat_qr.png" alt="微信二维码" class="pop-qr">
+                <p>扫描微信二维码联系团队</p>
+            </div>
+        </div>
+
+        <div class="pop-box" id="pop-weibo">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/weibo_qr.jpg" alt="微博二维码" class="pop-qr">
+                <p>扫描微博二维码关注我们</p>
+            </div>
+        </div>
+
+        <div class="pop-box" id="pop-mobile">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/index_10.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 16px;">请在手机商店搜索<br>"智汇AI"<br>下载安装</p>
+            </div>
+        </div>
+
+        <div class="pop-box" id="pop-qa">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/index_07.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 18px; color: #666;">抱歉功能还未开放哦</p>
+            </div>
+        </div>
+	</body>
+</html>

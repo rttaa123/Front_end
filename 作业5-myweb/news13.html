@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- 新闻详情页 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<!-- <script type="text/javascript" src="js/wow.min.js" ></script>	 -->
+		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/layer1-slider.js" ></script>
+		<title></title>
+		<script>
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			window.onresize = function() {
+			    document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			}				
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<!-- 网站头部 -->
+		<div class="header">
+			<!-- 顶部导航栏 -->
+			<div class="top">
+				<div class="topLeft">
+					<ul>
+						<li><a href="javascript:;" class="btn-wechat"><img src="images/wx.png">微信</a></li>
+						<li><a href="javascript:;" class="btn-weibo"><img src="images/wb.png">微博</a></li>
+						<li><a href="javascript:;" class="btn-mobile"><img src="images/phone.png">移动版</a></li>
+						<li><a href="javascript:;" class="btn-qa"><img src="images/robot.png">智能问答</a></li>
+					</ul>
+				</div>
+				<div class="topRight">
+					<!-- 登录注册 -->
+					<div class="Nr">
+                        <a href="login.html">登录</a>&nbsp;|&nbsp;<a href="register.html">注册</a>
+					</div>
+					<!-- 语言切换 -->
+					<div class="Nr">
+                        <a href="javascript:;" class="lang-btn on">繁</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">简</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">EN</a>
+					</div>
+				</div>
+			</div>
+			<!-- Logo和搜索框 -->
+			<div class="headerBox">
+				<div class="logo"><a href=""><img src="images/index_17.png"></a></div>
+				<div class="serach">
+					<input type="text" placeholder="搜索您想了解的资讯" />
+					<button onclick="window.location.href='news-list.html'">
+						<img src="images/search.png" alt="搜索图标" class="search-icon">
+						<span>搜索</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 主导航菜单 -->
+		<div class="nav">
+			<ul>
+				<li><a href="index.html"><img src="images/index_34.png">网站首页</a></li>
+				<li><a href="intro.html"><img src="images/index_46.png">关于我们</a></li>
+				<li class="has-dropdown">
+					<a href="news-list.html">
+						<img src="images/index_40.png">AI资讯
+						<span class="nav-arrow">▼</span>
+					</a>
+					<div class="dropdown-menu">
+						<a href="ai-culture.html">AI文化</a>
+						<a href="ai-application.html">AI应用</a>
+						<a href="ai-learning.html">AI学习</a>
+					</div>
+				</li>  
+				<li><a href="case-list.html"><img src="images/index_25.png">成果案例</a></li>
+				<li><a href="baoming.html"><img src="images/index_31.png">文章征集</a></li>
+				<li><a href="user-center.html"><img src="images/center.png">用户中心</a></li>
+			</ul>
+		</div>
+
+		<!-- 悬浮问卷按钮 -->
+		<div class="fixed-survey-btn">
+			<div class="icon-box">
+				<img src="images/icon_survey.png" alt="问卷">
+			</div>
+			<p>问卷调查</p>
+		</div>
+		<div class="pop-box" id="pop-survey-form">
+			<div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+			<div class="pop-content survey-content">
+				<h3>用户反馈调查</h3>
+				<p class="sub-title">您的建议是我们进步的动力</p>
+				
+				<form action="">
+					<div class="form-group">
+						<label>您对智汇AI平台的满意度：</label>
+						<div class="radio-group">
+							<label><input type="radio" name="satisfaction" value="very"> 非常满意</label>
+							<label><input type="radio" name="satisfaction" value="good"> 满意</label>
+							<label><input type="radio" name="satisfaction" value="normal"> 一般</label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>您的宝贵建议：</label>
+						<textarea placeholder="请输入您的建议或遇到的问题..."></textarea>
+					</div>
+		
+					<div class="form-group">
+						<label>联系方式 (选填)：</label>
+						<input type="text" placeholder="手机号或邮箱">
+					</div>
+		
+					<button type="button" class="submit-btn">提交反馈</button>
+				</form>
+				</div>
+		</div>
+		<div class="navGation">
+			<ul>
+				<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+				<li><a href="">成果案例</a></li>
+			</ul>
+		</div>
+		<div class="listContainer">
+			<div class="SideLeft">
+				<div class="bt">成果案例<img src="images/sideIcon_03.png"></div>
+				<ul>
+					<li><a href="">AI应用项目<span class="arrow"></span></a></li>
+					<li class="on"><a href="">AI科研领域<span class="arrow"></span></a></li>
+					<li><a href="">成果展示<span class="arrow"></span></a></li>		
+					
+			</div>
+			<div class="NrRight">
+				<div class="bt">
+					<ul>
+						<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+						<li><a href="">成果案例</a></li>
+					</ul>
+				</div>
+				<!-- 新闻详情内容 -->
+				<div class="news-detail">
+					<h2>金融科技：AI风控模型助力中小企业信贷，坏账率降低30%</h2>
+					<span class="rq">发布日期：2024-09-05</span>
+					<p>中小微企业融资难、融资贵的核心症结在于传统风控模式难以对其信用进行精准评估。网商银行推出的“大山雀”AI风控系统，通过卫星遥感图像识别、物联网设备数据、产业链图谱等另类数据，结合深度学习模型，开创了破解这一难题的新路径。在某农产品产业带的实践中，该系统展现了惊人的效果。</p>
+					<p>传统的信贷评估依赖财务报表和抵押物，而许多种植户、合作社无法提供。大山雀系统通过分析农户在手机地图上圈出的地块，调用高分辨率卫星影像，运用计算机视觉技术识别地块的作物类型、种植面积、生长态势，甚至估算产量。再结合当地气候、历史价格、物流信息等数据，系统能够动态评估农户的经营稳定性和预期收入，从而给予相应的信用额度和利率。</p>
+					<img src="images/details_case3_01.png" alt="卫星影像识别农田并与信贷额度关联的分析图">
+					<p>该案例中，AI风控模型实现了从“看过去”到“看未来”、从“看资产”到“看经营”的转变。接入该系统后，当地一家农商行服务的中小企业客户数量增长了150%，平均贷款审批时间从2周缩短至3分钟，基本实现了“310”模式（3分钟申请、1秒放款、0人工干预）。更令人瞩目的是，在客户群大幅下沉和扩大的情况下，该行的整体信贷坏账率反而同比降低了30%，风险控制能力显著增强。</p>
+					<p>这一成果案例证明了，在合法合规、保护隐私的前提下，运用AI技术对多维度数据进行融合分析，能够构建更包容、更精准的普惠金融风控体系。它不仅为金融机构创造了商业价值，更切实解决了实体经济发展中的痛点，具有重大的社会与经济意义。</p>
+					<img src="images/details_case3_02.png" alt="银行客户经理向农户展示AI信贷额度获批的手机界面">
+				</div>
+
+			</div>
+			
+			<div style="clear: both;"></div>
+		</div>
+		<div class="footer">
+			<div class="footerBox">
+				<div class="Link">
+					<div class="bt"><img src="images/footer_10.png">友情链接</div>
+					<ul>
+						<li><a href="">中国人工智能学会</a></li>
+						<li><a href="">人工智能产业发展联盟</a></li>
+						<li><a href="">AI技术交流平台</a></li>
+						<li><a href="">智能科技文化传播中心</a></li>
+					</ul>
+					<a class="more" href=""></a>
+				</div>
+				<div class="Main">
+					<ul>
+						<h2>关于智汇AI</h2>
+						<li><a href="">发展历程</a></li>
+						<li><a href="">未来方向</a></li>
+					</ul>
+					<ul>
+						<h2>信息公开</h2>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">智汇AI公告</a></li>
+						<li><a href="">管理及人才团队</a></li>
+						<li><a href="">学术委员会</a></li>
+						<li><a href="">组织架构</a></li>
+						<li><a href="">智汇AI简介</a></li>
+					</ul>
+					<ul>
+						<h2>业务板块</h2>
+						<li><a href="">AI技术研发</a></li>
+						<li><a href="">专业咨询</a></li>
+						<li><a href="">AI会展服务</a></li>
+						<li><a href="">产业合作</a></li>
+						<li><a href="">企业孵化</a></li>
+						<li><a href="">技术转移</a></li>
+						<li><a href="">人才培养</a></li>
+						<li><a href="">AI科学研究</a></li>
+					</ul>
+					<ul>
+						<h2>新闻动态</h2>
+						<li><a href="">智汇AI动态</a></li>
+						<li><a href="">行业动态</a></li>
+						<li><a href="">国内外动态</a></li>
+					</ul>
+					<ul>
+						<h2>成果案例</h2>
+						<li><a href="">在研项目</a></li>
+						<li><a href="">科研领域</a></li>
+						<li><a href="">成果展示</a></li>
+					</ul>
+					<ul>
+						<h2>人才招聘</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<ul>
+						<h2>资料下载</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<div class="code">
+						<img src="images/footer_15.png">
+						<p>官方微信</p>
+					</div>
+					<div class="phone">
+						<a href="">在线留言</a>
+						<p>周一至周五 9：00-18：00</p>
+						<h2>027-87059116</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyRight">
+			Copyright © 2024 智汇AI 人工智能科技文化传播平台 All Rights Reserved. <img src="images/footer_18.png">鄂公网安备 42011502000906号
+		</div>
+
+		<!-- 弹窗遮罩层 -->
+        <div class="pop-mask"></div>
+        
+        <!-- 微信二维码弹窗 -->
+        <div class="pop-box" id="pop-wechat">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/wechat_qr.png" alt="微信二维码" class="pop-qr">
+                <p>扫描微信二维码联系团队</p>
+            </div>
+        </div>
+
+        <!-- 微博二维码弹窗 -->
+        <div class="pop-box" id="pop-weibo">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/weibo_qr.jpg" alt="微博二维码" class="pop-qr">
+                <p>扫描微博二维码关注我们</p>
+            </div>
+        </div>
+
+        <!-- 移动版弹窗 -->
+        <div class="pop-box" id="pop-mobile">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/phone.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 16px;">请在手机商店搜索<br>"智汇AI"<br>下载安装</p>
+            </div>
+        </div>
+
+        <!-- 智能问答弹窗 -->
+        <div class="pop-box" id="pop-qa">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/robot.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 18px; color: #666;">抱歉功能还未开放哦</p>
+            </div>
+        </div>
+		
+	</body>
+</html>
+

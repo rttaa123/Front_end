@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!-- AI学习页面 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<!-- <script type="text/javascript" src="js/wow.min.js" ></script>	 -->
+		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/layer1-slider.js" ></script>
+		<title>AI学习 - 智汇AI平台</title>
+		<script>
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			window.onresize = function() {
+			    document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			}				
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<!-- 网站头部 -->
+		<div class="header">
+			<!-- 顶部导航栏 -->
+			<div class="top">
+				<div class="topLeft">
+					<ul>
+						<li><a href="javascript:;" class="btn-wechat"><img src="images/wx.png">微信</a></li>
+						<li><a href="javascript:;" class="btn-weibo"><img src="images/wb.png">微博</a></li>
+						<li><a href="javascript:;" class="btn-mobile"><img src="images/phone.png">移动版</a></li>
+						<li><a href="javascript:;" class="btn-qa"><img src="images/robot.png">智能问答</a></li>
+					</ul>
+				</div>
+				<div class="topRight">
+					<!-- 登录注册 -->
+					<div class="Nr">
+                        <a href="login.html">登录</a>&nbsp;|&nbsp;<a href="register.html">注册</a>
+					</div>
+					<!-- 语言切换 -->
+					<div class="Nr">
+                        <a href="javascript:;" class="lang-btn on">繁</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">简</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">EN</a>
+					</div>
+				</div>
+			</div>
+			<!-- Logo和搜索框 -->
+			<div class="headerBox">
+				<div class="logo"><a href=""><img src="images/index_17.png"></a></div>
+				<div class="serach">
+					<input type="text" placeholder="搜索您想了解的资讯" />
+					<button onclick="window.location.href='news-list.html'">
+						<img src="images/search.png" alt="搜索图标" class="search-icon">
+						<span>搜索</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 主导航菜单 -->
+		<div class="nav">
+			<ul>
+				<li><a href="index.html"><img src="images/index_34.png">网站首页</a></li>
+				<li><a href="intro.html"><img src="images/index_46.png">关于我们</a></li>
+				<li class="has-dropdown">
+					<a href="news-list.html">
+						<img src="images/index_40.png">AI资讯
+						<span class="nav-arrow">▼</span>
+					</a>
+					<div class="dropdown-menu">
+						<a href="ai-culture.html">AI文化</a>
+						<a href="ai-application.html">AI应用</a>
+						<a href="ai-learning.html">AI学习</a>
+					</div>
+				</li>  
+				<li><a href="case-list.html"><img src="images/index_25.png">成果案例</a></li>
+				<li><a href="baoming.html"><img src="images/index_31.png">文章征集</a></li>
+				<li><a href="user-center.html"><img src="images/center.png">用户中心</a></li>
+			</ul>
+		</div>
+
+		<!-- 悬浮问卷按钮 -->
+		<div class="fixed-survey-btn">
+			<div class="icon-box">
+				<img src="images/icon_survey.png" alt="问卷">
+			</div>
+			<p>问卷调查</p>
+		</div>
+		<div class="pop-box" id="pop-survey-form">
+			<div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+			<div class="pop-content survey-content">
+				<h3>用户反馈调查</h3>
+				<p class="sub-title">您的建议是我们进步的动力</p>
+				
+				<form action="">
+					<div class="form-group">
+						<label>您对智汇AI平台的满意度：</label>
+						<div class="radio-group">
+							<label><input type="radio" name="satisfaction" value="very"> 非常满意</label>
+							<label><input type="radio" name="satisfaction" value="good"> 满意</label>
+							<label><input type="radio" name="satisfaction" value="normal"> 一般</label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>您的宝贵建议：</label>
+						<textarea placeholder="请输入您的建议或遇到的问题..."></textarea>
+					</div>
+		
+					<div class="form-group">
+						<label>联系方式 (选填)：</label>
+						<input type="text" placeholder="手机号或邮箱">
+					</div>
+		
+					<button type="button" class="submit-btn">提交反馈</button>
+				</form>
+				</div>
+		</div>
+		<!-- 面包屑导航 -->
+		<div class="navGation">
+			<ul>
+				<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+				<li><a href="news-list.html">AI资讯</a>&nbsp;>&nbsp;</li>
+				<li><a href="ai-learning.html">AI学习</a></li>
+			</ul>
+		</div>
+		<!-- 列表内容区域 -->
+		<div class="listContainer">
+			<!-- 左侧导航 -->
+			<div class="SideLeft">
+				<div class="bt">AI学习专题<img src="images/sideIcon_03.png"></div>
+				<ul>
+					<li class="on"><a href="ai-learning.html">学习资源推荐 <span class="arrow"></span></a></li>
+					<li><a href="">AI入门教程 <span class="arrow"></span></a></li>
+					<li><a href="">机器学习实战 <span class="arrow"></span></a></li>
+					<li><a href="">深度学习进阶 <span class="arrow"></span></a></li>
+					<li><a href="">算法精讲 <span class="arrow"></span></a></li>
+					<li><a href="">职业发展指导 <span class="arrow"></span></a></li>
+				</ul>
+			</div>
+			<!-- 右侧内容 -->
+			<div class="NrRight">
+				<div class="bt">
+					<ul>
+						<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+						<li><a href="news-list.html">AI资讯</a>&nbsp;>&nbsp;</li>
+						<li><a href="ai-learning.html">AI学习</a></li>
+					</ul>
+				</div>
+				<!-- 新闻列表 -->
+				<div class="news-list">
+					<ul class="news-card-list">
+						<li>
+							<a href="news-detail.html" class="news-card">
+								<div class="news-img-box">
+									<img src="images/news/learning1.jpg" alt="AI学习图片">
+								</div>
+								<div class="news-content-box">
+									<h3 class="news-title">AI学习路线图：零基础如何系统掌握人工智能技术</h3>
+									<p class="news-desc">
+										本文为初学者提供完整的人工智能学习路径，从基础数学知识到编程技能，再到核心算法理解，帮助您构建系统的AI知识体系...
+									</p>
+									<div class="news-meta">
+										<span class="date">2024-06-15</span>
+										<span class="read-more">阅读详情 ></span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="news-detail.html" class="news-card">
+								<div class="news-img-box">
+									<img src="images/news/learning2.jpg" alt="AI学习图片">
+								</div>
+								<div class="news-content-box">
+									<h3 class="news-title">机器学习实战：从理论到项目的完整指南</h3>
+									<p class="news-desc">
+										通过实际案例分析，详细介绍如何将机器学习理论应用于真实项目，包括数据预处理、模型选择、训练优化和部署的全流程...
+									</p>
+									<div class="news-meta">
+										<span class="date">2024-06-10</span>
+										<span class="read-more">阅读详情 ></span>
+									</div>
+								</div>
+							</a>
+						</li>
+						
+						<li>
+							<a href="news-detail.html" class="news-card">
+								<div class="news-img-box">
+									<img src="images/news/learning3.jpg" alt="AI学习图片">
+								</div>
+								<div class="news-content-box">
+									<h3 class="news-title">深度学习核心概念精讲：神经网络架构与优化</h3>
+									<p class="news-desc">
+										深入解析卷积神经网络、循环神经网络、Transformer等主流深度学习模型的原理、架构设计要点和优化技巧...
+									</p>
+									<div class="news-meta">
+										<span class="date">2024-06-05</span>
+										<span class="read-more">阅读详情 ></span>
+									</div>
+								</div>
+							</a>
+						</li>
+						
+						<li>
+							<a href="news-detail.html" class="news-card">
+								<div class="news-img-box">
+									<img src="images/news/learning4.jpg" alt="AI学习图片">
+								</div>
+								<div class="news-content-box">
+									<h3 class="news-title">Python AI编程实战：常用库与工具详解</h3>
+									<p class="news-desc">
+										全面介绍TensorFlow、PyTorch、Scikit-learn等主流AI开发库的使用方法，结合实际代码示例讲解最佳实践...
+									</p>
+									<div class="news-meta">
+										<span class="date">2024-05-28</span>
+										<span class="read-more">阅读详情 ></span>
+									</div>
+								</div>
+							</a>
+						</li>
+						
+						<li>
+							<a href="news-detail.html" class="news-card">
+								<div class="news-img-box">
+									<img src="images/news/learning5.jpg" alt="AI学习图片">
+								</div>
+								<div class="news-content-box">
+									<h3 class="news-title">AI算法面试必备：常见问题与解题思路</h3>
+									<p class="news-desc">
+										整理AI工程师岗位面试中的高频算法问题，提供详细解题思路和代码实现，帮助求职者系统准备技术面试...
+									</p>
+									<div class="news-meta">
+										<span class="date">2024-05-22</span>
+										<span class="read-more">阅读详情 ></span>
+									</div>
+								</div>
+							</a>
+						</li>
+						
+						<li>
+							<a href="news-detail.html" class="news-card">
+								<div class="news-img-box">
+									<img src="images/news/learning6.jpg" alt="AI学习图片">
+								</div>
+								<div class="news-content-box">
+									<h3 class="news-title">AI学习资源全指南：优质课程、书籍与社区推荐</h3>
+									<p class="news-desc">
+										汇总国内外优质的AI学习资源，包括在线课程、经典书籍、开源项目和技术社区，为学习者提供全方位的学习支持...
+									</p>
+									<div class="news-meta">
+										<span class="date">2024-05-15</span>
+										<span class="read-more">阅读详情 ></span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					
+					<dl class="pageMain">
+						<dd><a href=""><img src="images/btn_03.png"></a></dd>
+						<dd class="on"><a href="">1</a></dd>
+						<dd><a href="">2</a></dd>
+						<dd>···</dd>
+						<dd><a href="">5</a></dd>
+						<dd><a href=""><img src="images/btn_05.png"></a></dd>
+					</dl>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="footer">
+			<div class="footerBox">
+				<div class="Link">
+					<div class="bt"><img src="images/footer_10.png">友情链接</div>
+					<ul>
+						<li><a href="">中国人工智能学会</a></li>
+						<li><a href="">人工智能产业发展联盟</a></li>
+						<li><a href="">AI技术交流平台</a></li>
+						<li><a href="">智能科技文化传播中心</a></li>
+					</ul>
+					<a class="more" href=""></a>
+				</div>
+				<div class="Main">
+					<ul>
+						<h2>关于智汇AI</h2>
+						<li><a href="">发展历程</a></li>
+						<li><a href="">未来方向</a></li>
+					</ul>
+					<ul>
+						<h2>信息公开</h2>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">智汇AI公告</a></li>
+						<li><a href="">管理及人才团队</a></li>
+						<li><a href="">学术委员会</a></li>
+						<li><a href="">组织架构</a></li>
+						<li><a href="">智汇AI简介</a></li>
+					</ul>
+					<ul>
+						<h2>业务板块</h2>
+						<li><a href="">AI技术研发</a></li>
+						<li><a href="">专业咨询</a></li>
+						<li><a href="">AI会展服务</a></li>
+						<li><a href="">产业合作</a></li>
+						<li><a href="">企业孵化</a></li>
+						<li><a href="">技术转移</a></li>
+						<li><a href="">人才培养</a></li>
+						<li><a href="">AI科学研究</a></li>
+					</ul>
+					<ul>
+						<h2>新闻动态</h2>
+						<li><a href="">智汇AI动态</a></li>
+						<li><a href="">行业动态</a></li>
+						<li><a href="">国内外动态</a></li>
+					</ul>
+					<ul>
+						<h2>成果案例</h2>
+						<li><a href="">在研项目</a></li>
+						<li><a href="">科研领域</a></li>
+						<li><a href="">成果展示</a></li>
+					</ul>
+					<ul>
+						<h2>人才招聘</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<ul>
+						<h2>资料下载</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<div class="code">
+						<img src="images/footer_15.png">
+						<p>官方微信</p>
+					</div>
+					<div class="phone">
+						<a href="">在线留言</a>
+						<p>周一至周五 9：00-18：00</p>
+						<h2>027-87059116</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyRight">
+			Copyright © 2024 智汇AI 人工智能科技文化传播平台 All Rights Reserved. <img src="images/footer_18.png">鄂公网安备 42011502000906号
+		</div>
+
+        <div class="pop-mask"></div>
+        
+        <div class="pop-box" id="pop-wechat">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/wechat_qr.png" alt="微信二维码" class="pop-qr">
+                <p>扫描微信二维码联系团队</p>
+            </div>
+        </div>
+
+        <div class="pop-box" id="pop-weibo">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/weibo_qr.jpg" alt="微博二维码" class="pop-qr">
+                <p>扫描微博二维码关注我们</p>
+            </div>
+        </div>
+
+        <div class="pop-box" id="pop-mobile">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/index_10.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 16px;">请在手机商店搜索<br>“智汇AI”<br>下载安装</p>
+            </div>
+        </div>
+
+        <div class="pop-box" id="pop-qa">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/index_07.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 18px; color: #666;">抱歉功能还未开放哦</p>
+            </div>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- 新闻详情页 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<!-- <script type="text/javascript" src="js/wow.min.js" ></script>	 -->
+		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/layer1-slider.js" ></script>
+		<title></title>
+		<script>
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			window.onresize = function() {
+			    document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			}				
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<!-- 网站头部 -->
+		<div class="header">
+			<!-- 顶部导航栏 -->
+			<div class="top">
+				<div class="topLeft">
+					<ul>
+						<li><a href="javascript:;" class="btn-wechat"><img src="images/wx.png">微信</a></li>
+						<li><a href="javascript:;" class="btn-weibo"><img src="images/wb.png">微博</a></li>
+						<li><a href="javascript:;" class="btn-mobile"><img src="images/phone.png">移动版</a></li>
+						<li><a href="javascript:;" class="btn-qa"><img src="images/robot.png">智能问答</a></li>
+					</ul>
+				</div>
+				<div class="topRight">
+					<!-- 登录注册 -->
+					<div class="Nr">
+                        <a href="login.html">登录</a>&nbsp;|&nbsp;<a href="register.html">注册</a>
+					</div>
+					<!-- 语言切换 -->
+					<div class="Nr">
+                        <a href="javascript:;" class="lang-btn on">繁</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">简</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">EN</a>
+					</div>
+				</div>
+			</div>
+			<!-- Logo和搜索框 -->
+			<div class="headerBox">
+				<div class="logo"><a href=""><img src="images/index_17.png"></a></div>
+				<div class="serach">
+					<input type="text" placeholder="搜索您想了解的资讯" />
+					<button onclick="window.location.href='news-list.html'">
+						<img src="images/search.png" alt="搜索图标" class="search-icon">
+						<span>搜索</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 主导航菜单 -->
+		<div class="nav">
+			<ul>
+				<li><a href="index.html"><img src="images/index_34.png">网站首页</a></li>
+				<li><a href="intro.html"><img src="images/index_46.png">关于我们</a></li>
+				<li class="has-dropdown">
+					<a href="news-list.html">
+						<img src="images/index_40.png">AI资讯
+						<span class="nav-arrow">▼</span>
+					</a>
+					<div class="dropdown-menu">
+						<a href="ai-culture.html">AI文化</a>
+						<a href="ai-application.html">AI应用</a>
+						<a href="ai-learning.html">AI学习</a>
+					</div>
+				</li>  
+				<li><a href="case-list.html"><img src="images/index_25.png">成果案例</a></li>
+				<li><a href="baoming.html"><img src="images/index_31.png">文章征集</a></li>
+				<li><a href="user-center.html"><img src="images/center.png">用户中心</a></li>
+			</ul>
+		</div>
+
+		<!-- 悬浮问卷按钮 -->
+		<div class="fixed-survey-btn">
+			<div class="icon-box">
+				<img src="images/icon_survey.png" alt="问卷">
+			</div>
+			<p>问卷调查</p>
+		</div>
+		<div class="pop-box" id="pop-survey-form">
+			<div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+			<div class="pop-content survey-content">
+				<h3>用户反馈调查</h3>
+				<p class="sub-title">您的建议是我们进步的动力</p>
+				
+				<form action="">
+					<div class="form-group">
+						<label>您对智汇AI平台的满意度：</label>
+						<div class="radio-group">
+							<label><input type="radio" name="satisfaction" value="very"> 非常满意</label>
+							<label><input type="radio" name="satisfaction" value="good"> 满意</label>
+							<label><input type="radio" name="satisfaction" value="normal"> 一般</label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>您的宝贵建议：</label>
+						<textarea placeholder="请输入您的建议或遇到的问题..."></textarea>
+					</div>
+		
+					<div class="form-group">
+						<label>联系方式 (选填)：</label>
+						<input type="text" placeholder="手机号或邮箱">
+					</div>
+		
+					<button type="button" class="submit-btn">提交反馈</button>
+				</form>
+				</div>
+		</div>
+		<div class="navGation">
+			<ul>
+				<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+				<li><a href="">AI资讯</a>&nbsp;>&nbsp;</li>
+				<li><a href="">AI文化</a></li>
+			</ul>
+		</div>
+		<div class="listContainer">
+			<div class="SideLeft">
+				<div class="bt">AI文化专题<img src="images/sideIcon_03.png"></div>
+				<ul>
+					<li class="on"><a href="ai-culture.html">AI文化前沿 <span class="arrow"></span></a></li>
+					<li><a href="">AI伦理与社会 <span class="arrow"></span></a></li>
+					<li><a href="">数字人文融合 <span class="arrow"></span></a></li>
+					<li><a href="">AI艺术与创意 <span class="arrow"></span></a></li>
+					<li><a href="">科技哲学思考 <span class="arrow"></span></a></li>
+				</ul>
+			</div>
+			<div class="NrRight">
+				<div class="bt">
+					<ul>
+						<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+						<li><a href="">AI资讯</a>&nbsp;>&nbsp;</li>
+						<li><a href="">AI文化</a></li>
+					</ul>
+				</div>
+				<!-- 新闻详情内容 -->
+				<div class="news-detail">
+					<h2>AI伦理与文化多样性保护的平衡之道</h2>
+					<span class="rq">发布日期：2024-06-05</span>
+					<p>人工智能技术的全球部署，带来了一个核心挑战：如何在追求普适性技术伦理的同时，尊重和保护世界各地的文化多样性？当前的AI系统，从大型语言模型到图像识别技术，其训练数据、价值取向和伦理规范往往隐含着特定文化（通常是西方主流文化）的视角，这可能导致对其他文化价值观的忽视甚至偏见，造成技术文化殖民的风险。</p>
+					<p>例如，关于隐私、公平、透明和问责的伦理原则，在不同文化语境下的理解和优先级可能存在显著差异。在集体主义文化中，个人数据与社群福祉的平衡点可能不同于个人主义社会；对于“公平”的定义，也可能在结果平等与机会平等之间有不同的文化倾向。一刀切的全球AI伦理框架，可能无法回应这种多元性。</p>
+					<img src="images/details_news7_01.png" alt="不同文化符号环绕AI伦理天平示意图">
+					<p>因此，建立跨文化的AI伦理对话机制至关重要。这需要技术开发者、伦理学家、人类学家以及来自不同文化背景的社区代表共同参与，在“尊重人的尊严”等基本共识之上，探索具有文化适应性的伦理实践准则。同时，在技术层面，应鼓励开发包含多语言、多文化视角的多样化数据集，并在算法设计中引入文化情境感知能力。</p>
+					<p>保护文化多样性的另一条路径是赋能。AI技术可以用于记录濒危语言、数字化非物质文化遗产、辅助本土知识的传承与创新。通过让技术服务于文化持有者，而非简单地覆盖他们，AI可以成为文化多样性保护的强大工具。最终的目标是走向一种“多元普遍主义”的AI治理模式，在全球化与地方化之间找到动态的、包容性的平衡点。</p>
+					<img src="images/details_news7_02.png" alt="AI技术用于数字化保护文化遗产场景">
+				</div>
+			</div>
+			
+			<div style="clear: both;"></div>
+		</div>
+		<div class="footer">
+			<div class="footerBox">
+				<div class="Link">
+					<div class="bt"><img src="images/footer_10.png">友情链接</div>
+					<ul>
+						<li><a href="">中国人工智能学会</a></li>
+						<li><a href="">人工智能产业发展联盟</a></li>
+						<li><a href="">AI技术交流平台</a></li>
+						<li><a href="">智能科技文化传播中心</a></li>
+					</ul>
+					<a class="more" href=""></a>
+				</div>
+				<div class="Main">
+					<ul>
+						<h2>关于智汇AI</h2>
+						<li><a href="">发展历程</a></li>
+						<li><a href="">未来方向</a></li>
+					</ul>
+					<ul>
+						<h2>信息公开</h2>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">智汇AI公告</a></li>
+						<li><a href="">管理及人才团队</a></li>
+						<li><a href="">学术委员会</a></li>
+						<li><a href="">组织架构</a></li>
+						<li><a href="">智汇AI简介</a></li>
+					</ul>
+					<ul>
+						<h2>业务板块</h2>
+						<li><a href="">AI技术研发</a></li>
+						<li><a href="">专业咨询</a></li>
+						<li><a href="">AI会展服务</a></li>
+						<li><a href="">产业合作</a></li>
+						<li><a href="">企业孵化</a></li>
+						<li><a href="">技术转移</a></li>
+						<li><a href="">人才培养</a></li>
+						<li><a href="">AI科学研究</a></li>
+					</ul>
+					<ul>
+						<h2>新闻动态</h2>
+						<li><a href="">智汇AI动态</a></li>
+						<li><a href="">行业动态</a></li>
+						<li><a href="">国内外动态</a></li>
+					</ul>
+					<ul>
+						<h2>成果案例</h2>
+						<li><a href="">在研项目</a></li>
+						<li><a href="">科研领域</a></li>
+						<li><a href="">成果展示</a></li>
+					</ul>
+					<ul>
+						<h2>人才招聘</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<ul>
+						<h2>资料下载</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<div class="code">
+						<img src="images/footer_15.png">
+						<p>官方微信</p>
+					</div>
+					<div class="phone">
+						<a href="">在线留言</a>
+						<p>周一至周五 9：00-18：00</p>
+						<h2>027-87059116</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyRight">
+			Copyright © 2024 智汇AI 人工智能科技文化传播平台 All Rights Reserved. <img src="images/footer_18.png">鄂公网安备 42011502000906号
+		</div>
+
+		<!-- 弹窗遮罩层 -->
+        <div class="pop-mask"></div>
+        
+        <!-- 微信二维码弹窗 -->
+        <div class="pop-box" id="pop-wechat">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/wechat_qr.png" alt="微信二维码" class="pop-qr">
+                <p>扫描微信二维码联系团队</p>
+            </div>
+        </div>
+
+        <!-- 微博二维码弹窗 -->
+        <div class="pop-box" id="pop-weibo">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/weibo_qr.jpg" alt="微博二维码" class="pop-qr">
+                <p>扫描微博二维码关注我们</p>
+            </div>
+        </div>
+
+        <!-- 移动版弹窗 -->
+        <div class="pop-box" id="pop-mobile">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/phone.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 16px;">请在手机商店搜索<br>"智汇AI"<br>下载安装</p>
+            </div>
+        </div>
+
+        <!-- 智能问答弹窗 -->
+        <div class="pop-box" id="pop-qa">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/robot.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 18px; color: #666;">抱歉功能还未开放哦</p>
+            </div>
+        </div>
+		
+	</body>
+</html>
+

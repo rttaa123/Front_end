@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<!-- 文章征集/投稿页 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<!-- <script type="text/javascript" src="js/wow.min.js" ></script>	 -->
+		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/layer1-slider.js" ></script>
+		<title>文章征集 - 智汇AI平台</title>
+		<script>
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			window.onresize = function() {
+			    document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+			}				
+			new WOW().init();
+		</script>
+	</head>
+	<body>
+		<!-- 网站头部 -->
+		<div class="header">
+			<!-- 顶部导航栏 -->
+			<div class="top">
+				<div class="topLeft">
+					<ul>
+						<li><a href="javascript:;" class="btn-wechat"><img src="images/wx.png">微信</a></li>
+						<li><a href="javascript:;" class="btn-weibo"><img src="images/wb.png">微博</a></li>
+						<li><a href="javascript:;" class="btn-mobile"><img src="images/phone.png">移动版</a></li>
+						<li><a href="javascript:;" class="btn-qa"><img src="images/robot.png">智能问答</a></li>
+					</ul>
+				</div>
+				<div class="topRight">
+					<!-- 登录注册 -->
+					<div class="Nr">
+                        <a href="login.html">登录</a>&nbsp;|&nbsp;<a href="register.html">注册</a>
+					</div>
+					<!-- 语言切换 -->
+					<div class="Nr">
+                        <a href="javascript:;" class="lang-btn on">繁</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">简</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">EN</a>
+					</div>
+				</div>
+			</div>
+			<!-- Logo和搜索框 -->
+			<div class="headerBox">
+				<div class="logo"><a href=""><img src="images/index_17.png"></a></div>
+				<div class="serach">
+					<input type="text" placeholder="搜索您想了解的资讯" />
+					<button onclick="window.location.href='news-list.html'">
+						<img src="images/search.png" alt="搜索图标" class="search-icon">
+						<span>搜索</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 主导航菜单 -->
+		<div class="nav">
+			<ul>
+				<li><a href="index.html"><img src="images/index_34.png">网站首页</a></li>
+				<li><a href="intro.html"><img src="images/index_46.png">关于我们</a></li>
+				<li class="has-dropdown">
+					<a href="news-list.html">
+						<img src="images/index_40.png">AI资讯
+						<span class="nav-arrow">▼</span>
+					</a>
+					<div class="dropdown-menu">
+						<a href="ai-culture.html">AI文化</a>
+						<a href="ai-application.html">AI应用</a>
+						<a href="ai-learning.html">AI学习</a>
+					</div>
+				</li>  
+				<li><a href="case-list.html"><img src="images/index_25.png">成果案例</a></li>
+				<li><a href="baoming.html"><img src="images/index_31.png">文章征集</a></li>
+				<li><a href="user-center.html"><img src="images/center.png">用户中心</a></li>
+			</ul>
+		</div>
+
+		<!-- 悬浮投稿按钮 -->
+		<div class="fixed-survey-btn">
+			<div class="icon-box">
+				<img src="images/a2On.png" alt="投稿">
+			</div>
+			<p>快速投稿</p>
+		</div>
+		
+		<!-- 快速投稿弹窗 -->
+		<div class="pop-box" id="pop-article-form">
+			<div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+			<div class="pop-content article-content">
+				<h3>文章快速投稿</h3>
+				<p class="sub-title">分享您的AI见解与研究成果</p>
+				
+				<form action="" class="simple-form">
+					<div class="form-group">
+						<label>文章标题：</label>
+						<input type="text" placeholder="请输入文章标题">
+					</div>
+					
+					<div class="form-group">
+						<label>文章类型：</label>
+						<select>
+							<option value="">请选择文章类型</option>
+							<option value="research">学术研究</option>
+							<option value="technology">技术应用</option>
+							<option value="review">综述评论</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label>作者姓名：</label>
+						<input type="text" placeholder="请输入作者姓名">
+					</div>
+					
+					<div class="form-group">
+						<label>联系方式：</label>
+						<input type="text" placeholder="邮箱或手机号">
+					</div>
+		
+					<button type="button" class="submit-btn">提交投稿</button>
+				</form>
+			</div>
+		</div>
+		
+		<!-- 页面标题区域 -->
+		<div class="page-header">
+			<div class="page-title">
+				<h1>智汇AI平台文章征集</h1>
+				<p class="page-subtitle">汇聚AI智慧，共享研究成果，推动人工智能技术发展</p>
+			</div>
+		</div>
+		
+		<div class="navGation">
+			<ul>
+				<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+				<li><a href="baoming.html">文章征集</a></li>
+			</ul>
+		</div>
+		<div class="listContainer">
+			<div class="SideLeft">
+				<div class="bt">文章征集<img src="images/sideIcon_03.png"></div>
+				<ul>
+					<li class="on"><a href="baoming.html">投稿申请 <span class="arrow"></span></a></li>
+					<!-- <li><a href="">投稿指南 <span class="arrow"></span></a></li>
+					<li><a href="">稿件要求 <span class="arrow"></span></a></li>
+					<li><a href="">评审流程 <span class="arrow"></span></a></li>
+					<li><a href="">发表奖励 <span class="arrow"></span></a></li>
+					<li><a href="">常见问题 <span class="arrow"></span></a></li> -->
+				</ul>
+			</div>
+			<div class="NrRight">
+				<div class="bt">
+					<ul>
+						<li><a href="index.html">首页</a>&nbsp;>&nbsp;</li>
+						<li><a href="baoming.html">文章征集</a>&nbsp;>&nbsp;</li>
+						<li><a href="baoming.html">投稿申请</a></li>
+					</ul>
+				</div>
+				
+				<!-- 投稿说明 -->
+				<div class="article-notice">
+					<h2>投稿说明</h2>
+					<p>欢迎向智汇AI平台投稿！我们致力于为人工智能领域的研究者、开发者和爱好者提供一个高质量的学术交流平台。请仔细阅读以下投稿要求，并按要求填写投稿申请表。</p>
+					
+					<div class="notice-box">
+						<h3><span>征集主题</span></h3>
+						<ul>
+							<li>人工智能基础理论与算法研究</li>
+							<li>机器学习与深度学习应用实践</li>
+							<li>自然语言处理与计算机视觉技术</li>
+							<li>AI在各行业的应用案例分析</li>
+							<li>人工智能伦理、法律与社会影响</li>
+							<li>AI教育、人才培养与发展趋势</li>
+						</ul>
+					</div>
+					
+					<div class="notice-box">
+						<h3><span>稿件要求</span></h3>
+						<ul>
+							<li>文章内容必须原创，未在其他平台发表</li>
+							<li>学术类文章需符合学术规范，注明参考文献</li>
+							<li>技术类文章需有实际应用价值或创新点</li>
+							<li>语言通顺，逻辑清晰，观点明确</li>
+							<li>建议字数：3000-8000字</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- 文章征集表单 -->
+				<div class="baoming">
+					<div class="layer">
+						<h2><span>*</span>文章标题</h2>
+						<input class="long" type="text" name="article-title" placeholder="请输入您的文章标题" />
+					</div>
+					<div class="layer">
+						<h2><span>*</span>文章分类</h2>
+						<dl>
+							<dd>
+								<select>
+									<option>请选择文章类别</option>
+									<option>学术研究</option>
+									<option>技术应用</option>
+									<option>案例分析</option>
+									<option>综述评论</option>
+									<option>观点探讨</option>
+								</select>
+							</dd>
+							<dd>
+								<select>
+									<option>请选择研究方向</option>
+									<option>机器学习</option>
+									<option>深度学习</option>
+									<option>自然语言处理</option>
+									<option>计算机视觉</option>
+									<option>机器人技术</option>
+									<option>数据科学</option>
+								</select>
+							</dd>
+						</dl>
+					</div>
+					<div class="layer">
+						<h2><span>*</span>作者邮箱</h2>
+						<input class="long" type="email" name="email" placeholder="用于接收投稿通知和审稿意见" />
+					</div>
+					<div class="layer">
+						
+						<ul>
+							<li>
+								<h2><span>*</span>第一作者姓名</h2>
+								<input type="text" placeholder="请输入第一作者姓名">
+							</li>
+							<li>
+								<h2><span>*</span>作者单位</h2>
+								<input type="text" placeholder="请输入作者单位">
+							</li>
+							<li>
+								<h2>职称/职务</h2>
+								<input type="text" placeholder="请输入职称或职务">
+							</li>
+						</ul>
+					</div>
+					<div class="layer">
+						<ul>
+							<li>
+								<h2><span>*</span>通讯作者姓名</h2>
+								<input type="text" placeholder="请输入通讯作者姓名">
+							</li>
+							<li>
+								<h2><span>*</span>手机号码</h2>
+								<input type="tel" placeholder="用于紧急联系">
+							</li>
+							<li>
+								<h2>微信号</h2>
+								<input type="text" placeholder="选填，用于建立联系">
+							</li>
+						</ul>
+					</div>
+					<div class="layer">
+						<ul>
+							<li style="width: 100%;">
+								<h2><span>*</span>文章摘要</h2>
+								<textarea placeholder="请简要描述文章的主要内容和创新点，字数在300-500字之间" rows="4"></textarea>
+							</li>
+						</ul>
+					</div>
+					<div class="layer">
+						<ul>
+							<li style="width: 100%;">
+								<h2>关键词</h2>
+								<input class="long" type="text" placeholder="请输入3-5个关键词，用逗号分隔">
+							</li>
+						</ul>
+					</div>
+					<div class="layer">
+						<h2><span>*</span>稿件上传</h2>
+						<div class="upload-section">
+							<p class="upload-hint">请上传您的稿件文件（支持格式：doc, docx, pdf，文件大小不超过20MB）</p>
+							<input type="file" class="file-input">
+						</div>
+					</div>
+					<div class="layer">
+						<h2>其他说明</h2>
+						<textarea placeholder="如有其他需要说明的事项，请在此处填写" rows="3"></textarea>
+					</div>
+					<div class="agreement">
+						<label>
+							<input type="checkbox" name="agreement"> 
+							我已阅读并同意<a href="javascript:void(0)">《投稿协议》</a>及<a href="javascript:void(0)">《版权声明》</a>
+						</label>
+					</div>
+					<button>提交投稿</button>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="footer">
+			<div class="footerBox">
+				<div class="Link">
+					<div class="bt"><img src="images/footer_10.png">友情链接</div>
+					<ul>
+						<li><a href="">中国人工智能学会</a></li>
+						<li><a href="">人工智能产业发展联盟</a></li>
+						<li><a href="">AI技术交流平台</a></li>
+						<li><a href="">智能科技文化传播中心</a></li>
+					</ul>
+					<a class="more" href=""></a>
+				</div>
+				<div class="Main">
+					<ul>
+						<h2>关于智汇AI</h2>
+						<li><a href="">发展历程</a></li>
+						<li><a href="">未来方向</a></li>
+					</ul>
+					<ul>
+						<h2>信息公开</h2>
+						<li><a href="">联系我们</a></li>
+						<li><a href="">智汇AI公告</a></li>
+						<li><a href="">管理及人才团队</a></li>
+						<li><a href="">学术委员会</a></li>
+						<li><a href="">组织架构</a></li>
+						<li><a href="">智汇AI简介</a></li>
+					</ul>
+					<ul>
+						<h2>业务板块</h2>
+						<li><a href="">AI技术研发</a></li>
+						<li><a href="">专业咨询</a></li>
+						<li><a href="">AI会展服务</a></li>
+						<li><a href="">产业合作</a></li>
+						<li><a href="">企业孵化</a></li>
+						<li><a href="">技术转移</a></li>
+						<li><a href="">人才培养</a></li>
+						<li><a href="">AI科学研究</a></li>
+					</ul>
+					<ul>
+						<h2>新闻动态</h2>
+						<li><a href="">智汇AI动态</a></li>
+						<li><a href="">行业动态</a></li>
+						<li><a href="">国内外动态</a></li>
+					</ul>
+					<ul>
+						<h2>成果案例</h2>
+						<li><a href="">在研项目</a></li>
+						<li><a href="">科研领域</a></li>
+						<li><a href="">成果展示</a></li>
+					</ul>
+					<ul>
+						<h2>文章征集</h2>
+						<li><a href="baoming.html">投稿申请</a></li>
+						<li><a href="">投稿指南</a></li>
+						<li><a href="">稿件要求</a></li>
+						<li><a href="">发表奖励</a></li>
+					</ul>
+					<ul>
+						<h2>资料下载</h2>
+						<li><a href="">职业教育</a></li>
+						<li><a href="">专、本培养</a></li>
+						<li><a href="">硕士研究生</a></li>
+						<li><a href="">博士研究生</a></li>
+					</ul>
+					<div class="code">
+						<img src="images/footer_15.png">
+						<p>官方微信</p>
+					</div>
+					<div class="phone">
+						<a href="">在线留言</a>
+						<p>周一至周五 9：00-18：00</p>
+						<h2>027-87059116</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyRight">
+			Copyright © 2024 智汇AI 人工智能科技文化传播平台 All Rights Reserved. <img src="images/footer_18.png">鄂公网安备 42011502000906号
+		</div>
+
+        <!-- 弹窗遮罩层 -->
+        <div class="pop-mask"></div>
+        
+        <!-- 微信二维码弹窗 -->
+        <div class="pop-box" id="pop-wechat">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/wechat_qr.png" alt="微信二维码" class="pop-qr">
+                <p>扫描微信二维码联系团队</p>
+            </div>
+        </div>
+
+        <!-- 微博二维码弹窗 -->
+        <div class="pop-box" id="pop-weibo">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <img src="images/weibo_qr.jpg" alt="微博二维码" class="pop-qr">
+                <p>扫描微博二维码关注我们</p>
+            </div>
+        </div>
+
+        <!-- 移动版弹窗 -->
+        <div class="pop-box" id="pop-mobile">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/index_10.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 16px;">请在手机商店搜索<br>"智汇AI"<br>下载安装</p>
+            </div>
+        </div>
+
+        <!-- 智能问答弹窗 -->
+        <div class="pop-box" id="pop-qa">
+            <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+            <div class="pop-content">
+                <div class="pop-icon"><img src="images/index_07.png" alt="Icon"></div>
+                <p style="margin-top: 20px; font-size: 18px; color: #666;">抱歉功能还未开放哦</p>
+            </div>
+        </div>
+
+        <script>
+			// 悬浮投稿按钮点击事件
+			$(document).ready(function() {
+				$('.fixed-survey-btn').click(function() {
+					$('#pop-article-form').fadeIn();
+					$('.pop-mask').fadeIn();
+				});
+				
+				// 关闭弹窗
+				$('.close-btn').click(function() {
+					$(this).closest('.pop-box').fadeOut();
+					$('.pop-mask').fadeOut();
+				});
+				
+				// 点击遮罩层关闭弹窗
+				$('.pop-mask').click(function() {
+					$('.pop-box').fadeOut();
+					$(this).fadeOut();
+				});
+				
+				// 投稿表单提交
+				$('.baoming button').click(function() {
+					var title = $('input[name="article-title"]').val();
+					var email = $('input[name="email"]').val();
+					var agreement = $('input[name="agreement"]').is(':checked');
+					
+					if(!title) {
+						alert('请填写文章标题');
+						return false;
+					}
+					
+					if(!email) {
+						alert('请填写作者邮箱');
+						return false;
+					}
+					
+					if(!agreement) {
+						alert('请阅读并同意投稿协议和版权声明');
+						return false;
+					}
+					
+					alert('投稿提交成功！我们将在3-5个工作日内审核您的稿件并给予回复。');
+				});
+				
+				// 快速投稿表单提交
+				$('#pop-article-form .submit-btn').click(function() {
+					alert('快速投稿已提交！我们会尽快与您联系。');
+					$('#pop-article-form').fadeOut();
+					$('.pop-mask').fadeOut();
+				});
+			});
+		</script>
+	</body>
+</html>

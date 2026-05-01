@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/layer1-slider.js"></script>
+    <script src="js/common.js"></script>
+    <title>我的文章 - 智汇AI</title>
+    <script>
+        document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+        window.onresize = function() {
+            document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/19.2 + 'px'
+        }
+    </script>
+</head>
+<body>
+<!-- 网站头部 -->
+<div class="header">
+    <!-- 顶部导航栏 -->
+    <div class="top">
+        <div class="topLeft">
+            <ul>
+                <li><a href="javascript:;" class="btn-wechat"><img src="images/wx.png">微信</a></li>
+                <li><a href="javascript:;" class="btn-weibo"><img src="images/wb.png">微博</a></li>
+                <li><a href="javascript:;" class="btn-mobile"><img src="images/phone.png">移动版</a></li>
+                <li><a href="javascript:;" class="btn-qa"><img src="images/robot.png">智能问答</a></li>
+            </ul>
+        </div>
+        <div class="topRight">
+            <!-- 登录注册 -->
+            <div class="Nr">
+                <a href="login.html">登录</a>&nbsp;|&nbsp;<a href="register.html">注册</a>
+            </div>
+            <!-- 语言切换 -->
+            <div class="Nr">
+                <a href="javascript:;" class="lang-btn on">繁</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">简</a>&nbsp;|&nbsp;<a href="javascript:;" class="lang-btn">EN</a>
+            </div>
+        </div>
+    </div>
+    <!-- Logo和搜索框 -->
+    <div class="headerBox">
+        <div class="logo"><a href=""><img src="images/index_17.png"></a></div>
+        <div class="serach">
+            <input type="text" placeholder="搜索您想了解的资讯" />
+            <button onclick="window.location.href='news-list.html'">
+                <img src="images/search.png" alt="搜索图标" class="search-icon">
+                <span>搜索</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- 主导航菜单 -->
+<div class="nav">
+    <ul>
+        <li><a href="index.html"><img src="images/index_34.png">网站首页</a></li>
+        <li><a href="intro.html"><img src="images/index_46.png">关于我们</a></li>
+        <li class="has-dropdown">
+            <a href="news-list.html">
+                <img src="images/index_40.png">AI资讯
+                <span class="nav-arrow">▼</span>
+            </a>
+            <div class="dropdown-menu">
+                <a href="ai-culture.html">AI文化</a>
+                <a href="ai-application.html">AI应用</a>
+                <a href="ai-learning.html">AI学习</a>
+            </div>
+        </li>  
+        <li><a href="case-list.html"><img src="images/index_25.png">成果案例</a></li>
+        <li><a href="baoming.html"><img src="images/index_31.png">文章征集</a></li>
+        <li><a href="user-center.html"><img src="images/center.png">用户中心</a></li>
+    </ul>
+</div>
+
+<!-- 悬浮问卷按钮 -->
+<div class="fixed-survey-btn">
+    <div class="icon-box">
+        <img src="images/icon_survey.png" alt="问卷">
+    </div>
+    <p>问卷调查</p>
+</div>
+<div class="pop-box" id="pop-survey-form">
+    <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+    <div class="pop-content survey-content">
+        <h3>用户反馈调查</h3>
+        <p class="sub-title">您的建议是我们进步的动力</p>
+        
+        <form action="">
+            <div class="form-group">
+                <label>您对智汇AI平台的满意度：</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="satisfaction" value="very"> 非常满意</label>
+                    <label><input type="radio" name="satisfaction" value="good"> 满意</label>
+                    <label><input type="radio" name="satisfaction" value="normal"> 一般</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>您的宝贵建议：</label>
+                <textarea placeholder="请输入您的建议或遇到的问题..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>联系方式 (选填)：</label>
+                <input type="text" placeholder="手机号或邮箱">
+            </div>
+
+            <button type="button" class="submit-btn">提交反馈</button>
+        </form>
+        </div>
+</div>
+<div class="navGation">
+    <ul><li><a href="index.html">首页</a>&nbsp;>&nbsp;</li><li><a href="my-articles.html">我的文章</a></li></ul>
+</div>
+<div class="listContainer">
+    <div class="SideLeft">
+        <div class="bt">用户中心<img src="images/sideIcon_03.png"></div>
+        <ul>
+            <li><a href="login.html">用户登录 <span class="arrow"></span></a></li>
+            <li><a href="register.html">注册账号 <span class="arrow"></span></a></li>
+            <li><a href="forgot-password.html">找回密码 <span class="arrow"></span></a></li>
+            <li><a href="user-center.html">个人中心 <span class="arrow"></span></a></li>
+            <li class="on"><a href="my-articles.html" class="active">我的文章 <span class="arrow"></span></a></li>
+        </ul>
+    </div>
+    <div class="NrRight">
+        <div class="bt">
+            <ul><li><a href="index.html">首页</a>&nbsp;>&nbsp;</li><li><a href="my-articles.html">我的文章</a></li></ul>
+        </div>
+        <div id="myArticles">
+            <div class="article-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索文章标题或内容">
+                    <button class="search-btn"><img src="images/search.png" alt="搜索" width="16" height="16"></button>
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option>全部状态</option>
+                        <option>已发布</option>
+                        <option>草稿</option>
+                        <option>待审核</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>全部分类</option>
+                        <option>AI技术</option>
+                        <option>行业动态</option>
+                        <option>应用案例</option>
+                    </select>
+                    <a href="#" class="new-article-btn">+ 新建文章</a>
+                </div>
+            </div>
+            <div class="articles-list">
+                <div class="article-item">
+                    <img src="images/news/news5.jpg" alt="文章封面" class="article-cover">
+                    <div class="article-content">
+                        <a href="#" class="article-title">人工智能在医疗领域的应用与前景分析</a>
+                        <div class="article-meta">
+                            <span>发布于：2024-12-12</span>
+                            <span>分类：AI技术</span>
+                            <span>状态：<span style="color:#2ecc71">已发布</span></span>
+                            <span>阅读：156</span>
+                            <span>点赞：42</span>
+                        </div>
+                        <p class="article-excerpt">本文深入探讨了人工智能技术在医疗健康领域的应用现状、技术挑战以及未来发展前景，分析了AI在疾病诊断、药物研发、医疗管理等方面的具体应用案例...</p>
+                        <div class="article-actions-inline">
+                            <a href="#" class="action-btn edit">编辑</a>
+                            <a href="#" class="action-btn delete">删除</a>
+                            <a href="#" class="action-btn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-item">
+                    <img src="images/news/news7.jpg" alt="文章封面" class="article-cover">
+                    <div class="article-content">
+                        <a href="#" class="article-title">深度学习算法优化策略研究</a>
+                        <div class="article-meta">
+                            <span>发布于：2024-12-10</span>
+                            <span>分类：AI技术</span>
+                            <span>状态：<span style="color:#f39c12">待审核</span></span>
+                            <span>阅读：89</span>
+                            <span>点赞：23</span>
+                        </div>
+                        <p class="article-excerpt">本文系统研究了深度学习算法的优化策略，包括模型压缩、量化训练、知识蒸馏等技术，提出了针对不同应用场景的优化方案...</p>
+                        <div class="article-actions-inline">
+                            <a href="#" class="action-btn edit">编辑</a>
+                            <a href="#" class="action-btn delete">删除</a>
+                            <a href="#" class="action-btn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-item">
+                    <img src="images/news/news4.jpg" alt="文章封面" class="article-cover">
+                    <div class="article-content">
+                        <a href="#" class="article-title">AI驱动的智能制造转型路径探索</a>
+                        <div class="article-meta">
+                            <span>发布于：2024-12-08</span>
+                            <span>分类：应用案例</span>
+                            <span>状态：<span style="color:#95a5a6">草稿</span></span>
+                            <span>阅读：0</span>
+                            <span>点赞：0</span>
+                        </div>
+                        <p class="article-excerpt">本文结合具体企业案例，探讨了AI技术在智能制造中的应用路径，提出了从数据采集、模型训练到系统集成的完整解决方案...</p>
+                        <div class="article-actions-inline">
+                            <a href="#" class="action-btn edit">编辑</a>
+                            <a href="#" class="action-btn delete">删除</a>
+                            <a href="#" class="action-btn">继续编辑</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-item">
+                    <img src="images/news/news9.jpg" alt="文章封面" class="article-cover">
+                    <div class="article-content">
+                        <a href="#" class="article-title">自然语言处理技术的最新进展</a>
+                        <div class="article-meta">
+                            <span>发布于：2024-12-05</span>
+                            <span>分类：行业动态</span>
+                            <span>状态：<span style="color:#2ecc71">已发布</span></span>
+                            <span>阅读：203</span>
+                            <span>点赞：56</span>
+                        </div>
+                        <p class="article-excerpt">本文综述了自然语言处理领域的最新研究进展，重点介绍了预训练语言模型、文本生成、情感分析等方向的技术突破和应用场景...</p>
+                        <div class="article-actions-inline">
+                            <a href="#" class="action-btn edit">编辑</a>
+                            <a href="#" class="action-btn delete">删除</a>
+                            <a href="#" class="action-btn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-item">
+                    <img src="images/news/news10.jpg" alt="文章封面" class="article-cover">
+                    <div class="article-content">
+                        <a href="#" class="article-title">计算机视觉在自动驾驶中的应用实践</a>
+                        <div class="article-meta">
+                            <span>发布于：2024-12-01</span>
+                            <span>分类：应用案例</span>
+                            <span>状态：<span style="color:#2ecc71">已发布</span></span>
+                            <span>阅读：178</span>
+                            <span>点赞：38</span>
+                        </div>
+                        <p class="article-excerpt">本文详细介绍了计算机视觉技术在自动驾驶系统中的具体应用，包括目标检测、车道线识别、交通标志识别等关键技术...</p>
+                        <div class="article-actions-inline">
+                            <a href="#" class="action-btn edit">编辑</a>
+                            <a href="#" class="action-btn delete">删除</a>
+                            <a href="#" class="action-btn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">下一页</a>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+<div class="footer">
+    <div class="footerBox">
+        <div class="Link">
+            <div class="bt"><img src="images/footer_10.png">友情链接</div>
+            <ul>
+                <li><a href="">中国人工智能学会</a></li>
+                <li><a href="">人工智能产业发展联盟</a></li>
+                <li><a href="">AI技术交流平台</a></li>
+                <li><a href="">智能科技文化传播中心</a></li>
+            </ul>
+            <a class="more" href=""></a>
+        </div>
+        <div class="Main">
+            <ul><h2>关于智汇AI</h2><li><a href="">发展历程</a></li><li><a href="">未来方向</a></li></ul>
+            <ul><h2>信息公开</h2><li><a href="">联系我们</a></li><li><a href="">智汇AI公告</a></li></ul>
+            <ul><h2>业务板块</h2><li><a href="">AI技术研发</a></li><li><a href="">专业咨询</a></li></ul>
+            <ul><h2>新闻动态</h2><li><a href="">智汇AI动态</a></li><li><a href="">行业动态</a></li></ul>
+            <ul><h2>成果案例</h2><li><a href="">在研项目</a></li><li><a href="">成果展示</a></li></ul>
+            <div class="code"><img src="images/footer_15.png"><p>官方微信</p></div>
+            <div class="phone"><a href="">在线留言</a><p>周一至周五 9：00-18：00</p><h2>027-87059116</h2></div>
+        </div>
+    </div>
+</div>
+<div class="copyRight">Copyright © 2024 智汇AI 人工智能科技文化传播平台 All Rights Reserved. <img src="images/footer_18.png">鄂公网安备 42011502000906号</div>
+
+<!-- 弹窗遮罩层 -->
+<div class="pop-mask"></div>
+        
+<!-- 微信二维码弹窗 -->
+<div class="pop-box" id="pop-wechat">
+    <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+    <div class="pop-content">
+        <img src="images/wechat_qr.png" alt="微信二维码" class="pop-qr">
+        <p>扫描微信二维码联系团队</p>
+    </div>
+</div>
+
+<!-- 微博二维码弹窗 -->
+<div class="pop-box" id="pop-weibo">
+    <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+    <div class="pop-content">
+        <img src="images/weibo_qr.jpg" alt="微博二维码" class="pop-qr">
+        <p>扫描微博二维码关注我们</p>
+    </div>
+</div>
+
+<!-- 移动版弹窗 -->
+<div class="pop-box" id="pop-mobile">
+    <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+    <div class="pop-content">
+        <div class="pop-icon"><img src="images/phone.png" alt="Icon"></div>
+        <p style="margin-top: 20px; font-size: 16px;">请在手机商店搜索<br>"智汇AI"<br>下载安装</p>
+    </div>
+</div>
+
+<!-- 智能问答弹窗 -->
+<div class="pop-box" id="pop-qa">
+    <div class="close-btn"><img src="images/close.png" alt="关闭"></div>
+    <div class="pop-content">
+        <div class="pop-icon"><img src="images/robot.png" alt="Icon"></div>
+        <p style="margin-top: 20px; font-size: 18px; color: #666;">抱歉功能还未开放哦</p>
+    </div>
+</div>
+</body>
+</html>
